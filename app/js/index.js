@@ -547,7 +547,7 @@
 				img = document.createElement('img'),
 				text = document.createTextNode(colour);
 
-			img.setAttribute('src', '/img/dice/dice.svg#' + colour);
+			img.setAttribute('src', 'img/dice/dice.svg#' + colour);
 			img.setAttribute('alt', colour);
 			img.setAttribute('data-colour', colour);
 			a.setAttribute('href', '#');
@@ -565,7 +565,7 @@
 				img = document.createElement('img'),
 				text = document.createTextNode(colour);
 
-			img.setAttribute('src', '/img/dice/dice.svg#' + colour);
+			img.setAttribute('src', 'img/dice/dice.svg#' + colour);
 			img.setAttribute('alt', colour);
 			img.setAttribute('data-colour', colour);
 			a.setAttribute('href', '#');
@@ -597,7 +597,7 @@
 			parent = elements.selectedDefenceUl;
 		}
 
-		img.setAttribute('src', '/img/dice/dice.svg#' + colour);
+		img.setAttribute('src', 'img/dice/dice.svg#' + colour);
 		img.setAttribute('alt', colour);
 		img.setAttribute('data-colour', colour);
 		img.setAttribute('data-uuid', uuid);
@@ -649,7 +649,7 @@
 
 	UUID.setRNG(aleaInstance);
 
-	xhr.get('/json/dice.json').then(JSON.parse, displayError, displayProgress).then(function(res) {
+	xhr.get('json/dice.json').then(JSON.parse, displayError, displayProgress).then(function(res) {
 		dice = res;
 		getElements();
 		setupListDisplay();
