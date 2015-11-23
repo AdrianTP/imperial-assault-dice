@@ -1,0 +1,20 @@
+{
+  "name": "imperial-assault-dice",
+  "version": "1.0.0",
+  "authors": [
+    "AdrianTP <github@adriantp.com>"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "requirejs": "~2.1.20",
+    "q": "~1.0.1"
+  }
+}

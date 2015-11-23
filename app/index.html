@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+<script data-main="app" src="bower_components/requirejs/require.js"></script>
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body lang="en">
+<div id="app">
+	<h1>Imperial Assault Dice</h1>
+	<div id="wrapper">
+		<div class="col">
+			<h2>Available Dice</h2>
+			<ul id="available" class="dice">
+				<li class="attack"><h3>Attack</h3><ul></ul></li>
+				<li class="defence"><h3>Defence</h3><ul></ul></li>
+			</ul>
+		</div>
+		<div class="col">
+			<h2>Selected Dice</h2>
+			<h3 class="no-dice">No dice...</h3>
+			<ul id="selected" class="dice">
+				<li class="attack"><h3>Attack</h3><ul></ul></li>
+				<li class="defence"><h3>Defence</h3><ul></ul></li>
+			</ul>
+		</div>
+		<div id="results">
+			<h2>Results</h2>
+		</div>
+	</div>
+	<div id="modal">
+		<h2 id="message">Loading...</h2>
+	</div>
+	<button class="calculate" disabled="disabled">calculate</button>
+</div>
+</body>
+</html>
