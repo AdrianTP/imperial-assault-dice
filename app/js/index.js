@@ -109,7 +109,8 @@
 
 	var setupListDisplay = function() {
 		elements.modal.classList.add('hidden');
-		elements.calculateButton.classList.add('hidden');
+		elements.statsButton.classList.add('hidden');
+		elements.rollButton.classList.add('hidden');
 		elements.selectedAttackLi.classList.add('hidden');
 		elements.selectedDefenceLi.classList.add('hidden');
 
@@ -120,22 +121,26 @@
 
 			elements.wrapper.classList.toggle('button-shown', (attack || defence));
 			elements.noDice.classList.toggle('hidden', (attack || defence));
-			elements.calculateButton.classList.toggle('hidden', !(attack || defence));
+			elements.statsButton.classList.toggle('hidden', !(attack || defence));
+			elements.rollButton.classList.toggle('hidden', !(attack || defence));
 			elements.selectedAttackLi.classList.toggle('hidden', !attack);
 			elements.selectedDefenceLi.classList.toggle('hidden', !defence);
 
 			if (attack || defence) {
-				elements.calculateButton.removeAttribute('disabled');
+				elements.statsButton.removeAttribute('disabled');
+				elements.rollButton.removeAttribute('disabled');
 			} else {
-				elements.calculateButton.setAttribute('disabled', 'disabled');
+				elements.statsButton.setAttribute('disabled', 'disabled');
+				elements.rollButton.setAttribute('disabled', 'disabled');
 			}
 		});
 
 		clearResultsContainer = selected.addCallback('both', function(sel) {
-			elements.resultsContainer.innerHTML = '';
+			elements.resultsContainer.innerHTML = '<h2>Results</h2>';
 		});
 
-		elements.calculateButton.addEventListener('click', calculateProbabilities);
+		elements.statsButton.addEventListener('click', calculate);
+		elements.rollButton.addEventListener('click', roll);
 	};
 
 	var recursiveDice = function(remainingDice, dieIndex, previousDieCurrentFace) {
@@ -339,15 +344,58 @@
 		return percentages;
 	};
 
-	var calculateProbabilities = function(e) {
+	var calculate = function(e) {
 		console.log('Calculating probabilities...', e);
 		elements.message.innerText = 'Calculating...';
 		elements.modal.classList.remove('hidden');
-		elements.resultsContainer.innerHTML = '';
-		elements.calculateButton.classList.add('hidden');
+		elements.resultsContainer.innerHTML = '<h2>Results</h2>';
+		elements.statsButton.classList.add('hidden');
+		elements.rollButton.classList.add('hidden');
 
 		setTimeout(calculationTimeoutCallback, 1000);
 	};
+
+	var roll = function(e) {
+		var list = selected.list(),
+			ul = document.createElement('ul');
+
+		ul.className = 'dice';
+		ul.id = 'rolled';
+
+		elements.statsButton.classList.add('hidden');
+		elements.rollButton.classList.add('hidden');
+
+		for (var role in list) {
+			if (list[role].length > 0) {
+				var li = document.createElement('li'),
+					h3 = document.createElement('h3'),
+					h3Text = document.createTextNode(capitaliseString(role)),
+					subUl = document.createElement('ul');
+
+				li.className = role;
+				h3.appendChild(h3Text);
+				li.appendChild(h3);
+
+				for (var i = 0; i < list[role].length; ++ i) {
+					var face = getRandomInt(0, list[role][i].die.faces.length - 1),
+						uuid = UUID.generate(),
+						dieLi = buildDieHTML(list[role][i].colour, uuid, face);
+
+					subUl.appendChild(dieLi);
+				}
+
+				li.appendChild(subUl);
+			}
+
+			ul.appendChild(li);
+		}
+
+		elements.resultsContainer.appendChild(ul);
+	};
+
+	var getRandomInt = function(min, max) {
+		return Math.floor(aleaInstance() * (max - min + 1)) + min;
+	}
 
 	var calculationTimeoutCallback = function() {
 		var list = selected.list();
@@ -529,7 +577,8 @@
 		elements.selectedAttackUl = document.querySelector('ul#selected.dice .attack ul');
 		elements.selectedDefenceLi = document.querySelector('ul#selected.dice .defence');
 		elements.selectedDefenceUl = document.querySelector('ul#selected.dice .defence ul');
-		elements.calculateButton = document.querySelector('button.calculate');
+		elements.statsButton = document.querySelector('button.stats');
+		elements.rollButton = document.querySelector('button.roll');
 		elements.noDice = document.querySelector('.no-dice');
 		elements.resultsContainer = document.querySelector('#results');
 	};
@@ -586,20 +635,13 @@
 		elements.selectedDefenceUl.addEventListener('click', removeDie('defence'));
 	};
 
-	var addDieHTML = function(side, colour) {
-		var parent = document.body,
-			li = document.createElement('li'),
+	var buildDieHTML = function(colour, uuid, face) {
+		var li = document.createElement('li'),
 			img = document.createElement('img'),
 			a = document.createElement('a'),
-			uuid = UUID.generate();
+			faceString = typeof(face) === 'undefined' ? '' : '-' + face;
 
-		if (side === 'attack') {
-			parent = elements.selectedAttackUl;
-		} else if (side === 'defence') {
-			parent = elements.selectedDefenceUl;
-		}
-
-		img.setAttribute('src', 'img/dice/dice.svg#' + colour);
+		img.setAttribute('src', 'img/dice/dice.svg#' + colour + faceString);
 		img.setAttribute('alt', colour);
 		img.setAttribute('data-colour', colour);
 		img.setAttribute('data-uuid', uuid);
@@ -607,6 +649,21 @@
 		a.appendChild(img);
 		li.className = 'die';
 		li.appendChild(a);
+
+		return li;
+	};
+
+	var addDieHTML = function(side, colour) {
+		var parent = document.body,
+			uuid = UUID.generate(),
+			li = buildDieHTML(colour, uuid);
+
+		if (side === 'attack') {
+			parent = elements.selectedAttackUl;
+		} else if (side === 'defence') {
+			parent = elements.selectedDefenceUl;
+		}
+
 		parent.appendChild(li);
 
 		selected.add(side, uuid, colour, dice[side][colour]);
