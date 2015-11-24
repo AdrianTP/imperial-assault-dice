@@ -8,8 +8,8 @@ body {
 	background-color: #333;
 	color: #EEE;
 	font-family: "Helvetica Neue Light", "Lucida Grande", "Calibri", "Arial", sans-serif;
-	font-size: 75%;
-	padding-top: 4em;
+	font-size: 100%;
+	padding-top: 6.4em;
 }
 
 #modal {
@@ -20,7 +20,7 @@ body {
 	left: 0;
 	position: fixed;
 	right: 0;
-	top: 4.5em;
+	top: 6.4em;
 	width: 100%;
 	height: 100%;
 	background-color: rgba(0, 0, 0, 0.5);
@@ -47,9 +47,9 @@ h1 {
 	background-color: #000;
 	border-bottom: 2px solid #000;
 	display: block;
-	font-size: 2em;
+	font-size: 4em;
 	left: 0;
-	padding: 0.375em 0.75em;
+	padding: 0.1875em 0.375em;
 	position: fixed;
 	right: 0;
 	/*text-align: center;*/
@@ -60,20 +60,20 @@ h1 {
 
 h2 {
 	background-color: #555;
-	font-size: 1.5em;
+	font-size: 3em;
 	margin: 0 0 0.5em 0;
-	padding: 0.5em 1em;
+	padding: 0.25em 0.5em;
 	width: 100%;
 }
 
 h3 {
-	font-size: 1em;
-	margin: 0 0 0.5em 1.5em;
+	font-size: 2em;
+	margin: 0 0 0.5em 0;
 }
 
 .col {
 	/*outline: 1px solid rgba(255,255,255,0.5);*/
-	margin: 0 0 0.5em 0;
+	margin: 0 0 1em 0;
 }
 
 ul {
@@ -86,20 +86,30 @@ li {
 
 ul.dice > li {
 	vertical-align: top;
-	width: 180px;
+	width: 26em;
 }
 
-ul.dice > li h3 {
-	margin-left: 0;
-}
-
-ul.dice > li li {
-	margin: 0 5px 5px 0;
+.col > h3,
+#results h3 {
+	margin-left: 0.75em;
 }
 
 li.attack,
 li.defence {
 	margin: 0 1.5em;
+}
+
+li a, li img {
+	display: block;
+}
+
+.die img {
+	height: 10em;
+	width: 10em;
+}
+
+.die {
+	margin: 0 1em 1em 0;
 }
 
 .calculate {
@@ -108,7 +118,7 @@ li.defence {
 	bottom: 0;
 	color: #EEE;
 	display: block;
-	font-size: 2em;
+	font-size: 4em;
 	left: 0;
 	padding: 1em;
 	position: fixed;
@@ -129,17 +139,13 @@ li.defence {
 	display: none;
 }
 
-.dice img {
-	height: 64px;
-	width: 64px;
-}
-
 .role-wrapper {
 	margin: 0 0 1.5em 0;
 }
 
 .table-wrapper {
-	margin: 0 1.5em 0.5em 1.5em;
+	font-size: 2em;
+	margin: 0 0.75em 0.5em 0.75em;
 }
 
 table {
@@ -165,7 +171,6 @@ th, td {
 	text-align: left;
 	width: 25%;
 }
-
 
 @media (min-width: 1000px) {
 	.col {

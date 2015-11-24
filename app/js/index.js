@@ -552,6 +552,7 @@
 			img.setAttribute('data-colour', colour);
 			a.setAttribute('href', '#');
 			a.appendChild(img);
+			li.className = 'die';
 			li.appendChild(a);
 			availableAttackFrag.appendChild(li);
 		}
@@ -570,6 +571,7 @@
 			img.setAttribute('data-colour', colour);
 			a.setAttribute('href', '#');
 			a.appendChild(img);
+			li.className = 'die';
 			li.appendChild(a);
 			availableDefenceFrag.appendChild(li);
 		}
@@ -603,6 +605,7 @@
 		img.setAttribute('data-uuid', uuid);
 		a.setAttribute('href', '#');
 		a.appendChild(img);
+		li.className = 'die';
 		li.appendChild(a);
 		parent.appendChild(li);
 
