@@ -96,7 +96,7 @@ ul.dice > li {
 
 li.attack,
 li.defence {
-	margin: 0 1.5em;
+	margin: 0 1.4em 0 1.5em;
 }
 
 li a, li img {
@@ -112,7 +112,8 @@ li a, li img {
 	margin: 0 1em 1em 0;
 }
 
-.calculate {
+.stats,
+.roll {
 	background-color: #00A;
 	border: 2px solid #EEE;
 	bottom: 0;
@@ -126,12 +127,24 @@ li a, li img {
 	width: 100%;
 }
 
-.calculate:active {
+.stats {
+	right: 50%;
+	width: 50%;
+}
+
+.roll {
+	left: 50%;
+	width: 50%;
+}
+
+.stats:active,
+.roll:active {
 	border-color: #000;
 	color: #000;
 }
 
-.calculate:focus {
+.stats:focus,
+.roll:focus{
 	outline: none;
 }
 
@@ -177,8 +190,6 @@ th, td {
 		display: inline-block;
 		vertical-align: top;
 		width: 49%;
-
-		outline: 1px solid rgba(255,255,255,0.5);
 	}
 
 	ul.dice > li {
