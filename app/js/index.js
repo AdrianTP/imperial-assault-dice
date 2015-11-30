@@ -187,18 +187,95 @@
 	var processResults = function(rolls) { // sorted ~= {damage: [<int>], range: [<int>], surge: [<int>]};
 		var sorted = sortResults(rolls),
 			totals = totalSortedResults(sorted),
-			processed = {
-				means: calculateMeans(sorted),
-				maximums: calculateMaximums(sorted),
-				medians: calculateMedians(sorted),
-				minimums: calculateMinimums(sorted),
-				modes: calculateModes(totals),
-				probabilities: calculatePercentages(totals, rolls.length),
-				sorted: sorted,
-				totals: totals
-			};
+			processed = calculateStats(sorted, totals, rolls);
+
+		processed.sorted = sorted;
+		processed.totals = totals;
 
 		return processed;
+	};
+
+	var calculateStats = function(sorted, totals, rolls) {
+		var means = {},
+			maximums = {},
+			medians = {},
+			minimums = {},
+			modes = {},
+			probabilities = {};
+
+		for (var effect in sorted) {
+			// Calculate Means
+			var total = 0;
+
+			for (var i = 0; i < sorted[effect].length; ++ i) {
+				total += sorted[effect][i];
+			}
+
+			means[effect] = total / sorted[effect].length;
+
+			// Calculate Maximums
+			maximums[effect] = sorted[effect][sorted[effect].length - 1];
+
+			// Calculate Medians
+			if (sorted[effect].length === 0) { // No values; no median
+				medians[effect] = null;
+			} else if (sorted[effect].length === 1) { // Only one value; that value becomes the median
+				medians[effect] = sorted[effect][0];
+			} else if (sorted[effect].length % 2 > 0) { // Odd number of values; just get the middle value
+				var indexToGet = Math.floor(sorted[effect].length / 2);
+				medians[effect] = sorted[effect][indexToGet];
+			} else { // even number of values; need to find the average between the two values surrounding the middle
+				var indexToGet = sorted[effect].length / 2,
+					median = (sorted[effect][indexToGet] + sorted[effect][indexToGet - 1]) / 2;
+
+				medians[effect] = median;
+			}
+
+			// Calculate Minimums
+			for (var effect in sorted) {
+				minimums[effect] = sorted[effect][0];
+			}
+		}
+
+		// Too bad these have to go in its own loop :(
+		for (var effect in totals) {
+			// Calculate Modes
+			var mode = [],
+				max = 0
+
+			for (var i = 0; i < totals[effect].length; ++ i) {
+				if (totals[effect][i] > max) {
+					mode = [i];
+					max = totals[effect][i];
+				} else if (totals[effect][i] === max) {
+					mode.push(i);
+				}
+			}
+
+			modes[effect] = mode;
+
+			// Calculate Probabilities
+			for (var i = 0; i < totals[effect].length; ++i) {
+				if (!probabilities.hasOwnProperty(effect)) {
+					probabilities[effect] = [];
+				}
+
+				if (typeof(totals[effect][i]) === 'undefined') {
+					probabilities[effect][i] = 0;
+				} else {
+					probabilities[effect][i] = totals[effect][i] / rolls.length;
+				}
+			}
+		}
+
+		return {
+			means: means,
+			maximums: maximums,
+			medians: medians,
+			minimums: minimums,
+			modes: modes,
+			probabilities: probabilities
+		};
 	};
 
 	// Bucket-sort the roll results values by effect in numerical order for easier analysis
@@ -215,6 +292,7 @@
 			}
 		}
 
+		// TODO: See about optimising this so sorting is included in the above loops
 		for (var effect in sorted) {
 			sorted[effect].sort();
 		}
@@ -232,6 +310,7 @@
 				totals[effect] = [];
 			}
 
+			// Place the total count of each value at the index equivalent to that value
 			for (var i = 0; i < sorted[effect].length; ++ i) {
 				if (typeof(totals[effect][sorted[effect][i]]) === 'undefined') {
 					totals[effect][sorted[effect][i]] = 0;
@@ -239,113 +318,12 @@
 
 				++ totals[effect][sorted[effect][i]];
 			}
-
-			for (var i = 0; i < totals[effect].length; ++ i) {
-				if (typeof(totals[effect][i]) === 'undefined') {
-					totals[effect][i] = 0;
-				}
-			}
 		}
 
 		return totals;
 	};
 
-	var calculateMeans = function(sorted) {
-		var means = {};
-
-		for (var effect in sorted) {
-			var total = 0;
-
-			for (var i = 0; i < sorted[effect].length; ++ i) {
-				total += sorted[effect][i];
-			}
-
-			means[effect] = total / sorted[effect].length;
-		}
-
-		return means;
-	};
-
-	var calculateMaximums = function(sorted) {
-		var maximums = {};
-
-		for (var effect in sorted) {
-			maximums[effect] = sorted[effect][sorted[effect].length - 1];
-		}
-
-		return maximums;
-	};
-
-	var calculateMedians = function(sorted) {
-		var medians = {};
-
-		for (var effect in sorted) {
-			if (sorted[effect].length === 0) {
-				medians[effect] = null;
-			} else if (sorted[effect].length === 1) {
-				medians[effect] = sorted[effect][0];
-			} else if (sorted[effect].length % 2 > 0) { // Odd number of values; just get the middle value
-				var indexToGet = Math.floor(sorted[effect].length / 2);
-				medians[effect] = sorted[effect][indexToGet];
-			} else { // even number of values; need to find the average between the two values surrounding the middle
-				var indexToGet = sorted[effect].length / 2,
-					median = (sorted[effect][indexToGet] + sorted[effect][indexToGet - 1]) / 2;
-
-				medians[effect] = median;
-			}
-		}
-
-		return medians;
-	};
-
-	var calculateMinimums = function(sorted) {
-		var minimums = {};
-
-		for (var effect in sorted) {
-			minimums[effect] = sorted[effect][0];
-		}
-
-		return minimums;
-	};
-
-	var calculateModes = function(totals) { // totals ~= {damage: [<int>], range: [<int>], surge: [<int>]};
-		var modes = {};
-
-		for (var effect in totals) {
-			var mode = [],
-				max = 0;
-
-			for (var i = 0; i < totals[effect].length; ++ i) {
-				if (totals[effect][i] > max) {
-					mode = [i];
-					max = totals[effect][i];
-				} // TODO: Figure out how to show multiple modes when two are tied
-			}
-
-			modes[effect] = mode;
-		}
-
-		return modes;
-	};
-
-	var calculatePercentages = function(totals, numRolls) { // totals ~= {damage: [<int>], range: [<int>], surge: [<int>]};
-		var percentages = {};
-
-		for (var effect in totals) {
-			for (var i = 0; i < totals[effect].length; ++i) {
-				if (!percentages.hasOwnProperty(effect)) {
-					percentages[effect] = [];
-				}
-
-				percentages[effect][i] = totals[effect][i] / numRolls;
-			}
-		}
-
-		return percentages;
-	};
-
 	var calculate = function(e) {
-		console.log('Calculating probabilities...', e);
 		elements.message.innerText = 'Calculating...';
 		elements.modal.classList.remove('hidden');
 		elements.resultsContainer.innerHTML = '<h2>Results</h2>';
@@ -508,6 +486,8 @@
 
 				if (/array]$/i.test(Object.prototype.toString.call(processed[reports[i].key][effect]))) {
 					rows[i][effect] = processed[reports[i].key][effect].join(', ');
+				} else if (processed[reports[i].key][effect] === null) {
+					rows[i][effect] = 'none';
 				} else {
 					rows[i][effect] = roundFloat(processed[reports[i].key][effect], 2);
 				}
