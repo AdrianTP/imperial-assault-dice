@@ -8,7 +8,7 @@ body {
 	background-color: #333;
 	color: #EEE;
 	font-family: "Helvetica Neue Light", "Lucida Grande", "Calibri", "Arial", sans-serif;
-	font-size: 100%;
+	font-size: 40%;
 	padding-top: 6.4em;
 	touch-action: manipulation;
 	-ms-touch-action: manipulation;
@@ -80,11 +80,11 @@ a:visited {
 }
 
 #wrapper {
-	margin-bottom: 7.5em;
+	margin-bottom: 12em;
 }
 
 #wrapper.button-shown {
-	margin-bottom: 13.5em;
+	margin-bottom: 24em;
 }
 
 h1 {
@@ -133,7 +133,7 @@ ul.dice > li {
 }
 
 .col h3 {
-	margin-left: 0.375em;
+	/*margin-left: 0.375em;*/
 }
 
 .col h3.no-dice,
@@ -141,8 +141,13 @@ ul.dice > li {
 	margin-left: 0.75em;
 }
 
-.col ul {
-	margin: 0 1.4em 0 0.75em;
+#results ul h3 {
+	margin-left: 0;
+}
+
+.col > ul,
+.results > ul {
+	margin: 0 1.4em 0 1.5em;
 }
 
 li.attack,
@@ -168,7 +173,7 @@ li a, li img {
 	background-color: #00A;
 	border: 2px solid #EEE;
 	border-width: 1px 0 0 0;
-	bottom: 1.5em;
+	bottom: 2.5em;
 	color: #EEE;
 	display: block;
 	font-size: 4em;
@@ -254,7 +259,7 @@ th, td {
 	background-color: #000;
 	border-top: 1px solid #EEE;
 	/*font-size: 0;*/
-	height: 6em;
+	height: 10em;
 	position: fixed;
 	bottom: 0;
 	left: 0;
@@ -273,7 +278,7 @@ th, td {
 
 .tab img {
 	display: inline;
-	height: 6em;
+	height: 10em;
 }
 
 .tab.active {

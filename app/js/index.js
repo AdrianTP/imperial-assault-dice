@@ -274,7 +274,6 @@
 	var calculate = function(e) {
 		elements.message.innerText = 'Calculating...';
 		elements.modal.classList.remove('hidden');
-		elements.resultsContainer.innerHTML = '';
 		elements.statsButton.classList.add('hidden');
 		elements.rollButton.classList.add('hidden');
 		elements.wrapper.classList.remove('button-shown');
@@ -289,6 +288,7 @@
 
 		elements.statsButton.classList.add('hidden');
 		elements.rollButton.classList.add('hidden');
+		elements.wrapper.classList.remove('button-shown');
 
 		for (var role in list) {
 			if (list[role].length > 0) {
@@ -316,8 +316,6 @@
 
 				html += '</ul></li>';
 			}
-
-			html += '</ul>';
 		}
 
 		html += '</ul>';
