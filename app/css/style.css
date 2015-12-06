@@ -10,11 +10,20 @@ body {
 	font-family: "Helvetica Neue Light", "Lucida Grande", "Calibri", "Arial", sans-serif;
 	font-size: 100%;
 	padding-top: 6.4em;
+	touch-action: manipulation;
+	-ms-touch-action: manipulation;
+}
+
+a,
+a:active,
+a:visited {
+	color: #EEE;
+	text-decoration: none;
 }
 
 #modal {
 	align-items: center;
-	bottom: 0;
+	bottom: 6em;
 	display: flex;
 	justify-content: center;
 	left: 0;
@@ -22,7 +31,7 @@ body {
 	right: 0;
 	top: 6.4em;
 	width: 100%;
-	height: 100%;
+	/*height: 100%;*/
 	background-color: rgba(0, 0, 0, 0.5);
 }
 
@@ -39,8 +48,43 @@ body {
 	width: auto;
 }
 
-.button-shown {
-	margin-bottom: 7em;
+#menu {
+	background-color: #000;
+	font-size: 3em;
+	position: absolute;
+	top: 100px;
+	width: 100%;
+	bottom: 0;
+	left: 0%;
+	transition: left 0.25s;
+	z-index: 999;
+	border-top: 1px solid #EEE;
+}
+
+#menu.hidden {
+	display: block;
+	left: -100%;
+}
+
+#menu li {
+	border-bottom: 1px solid #EEE;
+	display: block;
+	padding: 0.5em 0.5em;
+}
+
+.menu.button,
+.menu.button:active,
+.menu.button:visited {
+	color: #00F;
+	margin-right: 10px;
+}
+
+#wrapper {
+	margin-bottom: 7.5em;
+}
+
+#wrapper.button-shown {
+	margin-bottom: 13.5em;
 }
 
 h1 {
@@ -86,17 +130,24 @@ li {
 
 ul.dice > li {
 	vertical-align: top;
-	width: 26em;
 }
 
-.col > h3,
+.col h3 {
+	margin-left: 0.375em;
+}
+
+.col h3.no-dice,
 #results h3 {
 	margin-left: 0.75em;
 }
 
+.col ul {
+	margin: 0 1.4em 0 0.75em;
+}
+
 li.attack,
 li.defence {
-	margin: 0 1.4em 0 1.5em;
+
 }
 
 li a, li img {
@@ -116,7 +167,8 @@ li a, li img {
 .roll {
 	background-color: #00A;
 	border: 2px solid #EEE;
-	bottom: 0;
+	border-width: 1px 0 0 0;
+	bottom: 1.5em;
 	color: #EEE;
 	display: block;
 	font-size: 4em;
@@ -133,6 +185,7 @@ li a, li img {
 }
 
 .roll {
+	border-left: 1px solid #EEE;
 	left: 50%;
 	width: 50%;
 }
@@ -195,4 +248,46 @@ th, td {
 	ul.dice > li {
 		width: auto;
 	}
+}
+
+.tabs {
+	background-color: #000;
+	border-top: 1px solid #EEE;
+	/*font-size: 0;*/
+	height: 6em;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	text-align: center;
+	vertical-align: middle;
+}
+
+.tab {
+	border-left: 1px solid #EEE;
+}
+
+.tab:first-child {
+	border: none;
+}
+
+.tab img {
+	display: inline;
+	height: 6em;
+}
+
+.tab.active {
+	background-color: #EEE;
+}
+
+.tab.active .off {
+	display: none;
+}
+
+.tab .on {
+	display: none;
+}
+
+.tab.active .on {
+	display: inline;
 }

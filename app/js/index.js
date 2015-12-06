@@ -16,7 +16,7 @@
 //				versus -- attack and defence
 //					calculate raw probabilities of each feature
 //					calculate outcome probabilities
-//			Dice Roller
+//	DONE	Dice Roller
 
 (function (name, definition) {
 	if (typeof module != 'undefined' && module.exports) module.exports = definition()
@@ -29,75 +29,17 @@
 		aleaInstance = Alea.getInstance(gameId),
 		xhr = require('./xhr'),
 		startTime = Date.now(),
+		currentGame = null,
 		dice = null,
+		dir = null,
+		games = null,
 		elements = {},
-		selected = (function() {
-			var sides = {
-					attack: [],
-					defence: []
-				},
-				callbacks = {
-					add: {},
-					remove: {}
-				};
-
-			return {
-				add: function(side, id, colour, die) {
-					sides[side].push({
-						uuid: id,
-						colour: colour,
-						die: die
-					});
-
-					for (var uuid in callbacks.add) {
-						callbacks.add[uuid](this);
-					}
-				},
-				remove: function(side, id) {
-					var _this = this;
-
-					sides[side].filter(function(el, i, arr) {
-						if (el.uuid === id) {
-							arr.splice(i, 1);
-
-							for (var uuid in callbacks.remove) {
-								callbacks.remove[uuid](_this);
-							}
-						}
-
-						return;
-					});
-				},
-				list: function() {
-					return JSON.parse(JSON.stringify(sides));
-				},
-				addCallback: function(on, fn) {
-					if (/function/i.test(typeof(fn))) {
-						var uuid = UUID.generate();
-
-						if (/both/i.test(on)) {
-							callbacks.add[uuid] = fn;
-							callbacks.remove[uuid] = fn;
-						} else {
-							callbacks[on][uuid] = fn;
-						}
-
-						return uuid;
-					}
-				},
-				removeCallback: function(uuid) {
-					if (callbacks.add.hasOwnProperty[uuid]) {
-						delete callbacks.add[uuid];
-					}
-
-					if (callbacks.remove.hasOwnProperty[uuid]) {
-						delete callbacks.remove[uuid];
-					}
-				}
-			};
-		})(),
+		manager = require('./dice-manager.js'),
 		toggleListDisplayUUID = null,
 		clearResultsContainer = null;
+
+	UUID.setRNG(aleaInstance);
+	manager.setUUIDGenerator(UUID);
 
 	var displayProgress = function (progress) {
 		console.log(Math.round(progress * 100));
@@ -114,7 +56,7 @@
 		elements.selectedAttackLi.classList.add('hidden');
 		elements.selectedDefenceLi.classList.add('hidden');
 
-		toggleListDisplayUUID = selected.addCallback('both', function(sel) {
+		toggleListDisplayUUID = manager.addCallback('both', function(sel) {
 			var list = sel.list(),
 				attack = Object.keys(list.attack).length > 0,
 				defence = Object.keys(list.defence).length > 0;
@@ -135,12 +77,18 @@
 			}
 		});
 
-		clearResultsContainer = selected.addCallback('both', function(sel) {
-			elements.resultsContainer.innerHTML = '<h2>Results</h2>';
+		clearResultsContainer = manager.addCallback('both', function(sel) {
+			elements.resultsContainer.innerHTML = '';
 		});
 
 		elements.statsButton.addEventListener('click', calculate);
 		elements.rollButton.addEventListener('click', roll);
+
+		// Add event listeners to lists
+		elements.availableUl.addEventListener('click', addDie);
+
+		elements.selectedAttackUl.addEventListener('click', removeDie('attack'));
+		elements.selectedDefenceUl.addEventListener('click', removeDie('defence'));
 	};
 
 	var recursiveDice = function(remainingDice, dieIndex, previousDieCurrentFace) {
@@ -326,49 +274,55 @@
 	var calculate = function(e) {
 		elements.message.innerText = 'Calculating...';
 		elements.modal.classList.remove('hidden');
-		elements.resultsContainer.innerHTML = '<h2>Results</h2>';
+		elements.resultsContainer.innerHTML = '';
 		elements.statsButton.classList.add('hidden');
 		elements.rollButton.classList.add('hidden');
+		elements.wrapper.classList.remove('button-shown');
 
-		setTimeout(calculationTimeoutCallback, 1000);
+		setTimeout(calculationTimeoutCallback, 100);
 	};
 
 	var roll = function(e) {
-		var list = selected.list(),
+		var list = manager.list(),
+			html = '<ul id="rolled" class="dice">',
 			ul = document.createElement('ul');
-
-		ul.className = 'dice';
-		ul.id = 'rolled';
 
 		elements.statsButton.classList.add('hidden');
 		elements.rollButton.classList.add('hidden');
 
 		for (var role in list) {
 			if (list[role].length > 0) {
-				var li = document.createElement('li'),
-					h3 = document.createElement('h3'),
-					h3Text = document.createTextNode(capitaliseString(role)),
-					subUl = document.createElement('ul');
-
-				li.className = role;
-				h3.appendChild(h3Text);
-				li.appendChild(h3);
+				html	+=	'<li class="' + role + '">'
+						+		'<h3>' + capitaliseString(role) + '</h3>'
+						+		'<ul>'
 
 				for (var i = 0; i < list[role].length; ++ i) {
-					var face = getRandomInt(0, list[role][i].die.faces.length - 1),
+					var face = '-' + getRandomInt(0, list[role][i].die.faces.length - 1),
 						uuid = UUID.generate(),
-						dieLi = buildDieHTML(list[role][i].colour, uuid, face);
+						colour = list[role][i].colour;
 
-					subUl.appendChild(dieLi);
+					html	+=	'<li class="die">'
+							+		'<a href="#">'
+							+			'<img '
+							+				'alt="' + colour + '" '
+							+				'data-colour="' + colour + '" '
+							+				'data-uuid="' + uuid + '" '
+							+				'src="games/' + currentGame.key + '/dice.svg#' + colour + face + '" '
+							+			'/>'
+							+		'</a>'
+							+	'</li>'
+					;
 				}
 
-				li.appendChild(subUl);
+				html += '</ul></li>';
 			}
 
-			ul.appendChild(li);
+			html += '</ul>';
 		}
 
-		elements.resultsContainer.appendChild(ul);
+		html += '</ul>';
+		elements.resultsContainer.innerHTML = html;
+
 	};
 
 	var getRandomInt = function(min, max) {
@@ -376,18 +330,19 @@
 	}
 
 	var calculationTimeoutCallback = function() {
-		var list = selected.list();
+		var list = manager.list(),
+			html = '';
 
 		for (var role in list) {
 			if (list[role].length > 0) {
 				var rolls = recursiveDice(list[role]),
 					processed = processResults(rolls);
 
-				console.log(processed);
-
-				buildResultsTable(role, processed);
+				html += buildResultsTable(role, processed);
 			}
 		}
+
+		elements.resultsContainer.innerHTML = html;
 
 		elements.modal.classList.add('hidden');
 	};
@@ -401,29 +356,21 @@
 	};
 
 	var buildResultsTable = function(title, processed) {
-		var roleWrapper = document.createElement('div'),
-			h3 = document.createElement('h3'),
-			capitalisedTitleString = capitaliseString(title),
-			titleNode = document.createTextNode(capitalisedTitleString),
-			probabilitiesDiv = document.createElement('div'),
+		var capitalisedTitleString = capitaliseString(title),
 			probabilitiesTable = buildProbabilitiesTable(processed.probabilities),
-			statsDiv = document.createElement('div'),
 			statsTable = buildStatsTable(processed);
 
-		roleWrapper.className = 'role-wrapper';
+		html	=	'<div class="role-wrapper">'
+				+		'<h3>' + capitalisedTitleString + '</h3>'
+				+		'<div class="table-wrapper">'
+				+			probabilitiesTable
+				+		'</div>'
+				+		'<div class="table-wrapper">'
+				+			statsTable
+				+		'</div>'
+		;
 
-		h3.appendChild(titleNode);
-		roleWrapper.appendChild(h3);
-
-		probabilitiesDiv.appendChild(probabilitiesTable);
-		probabilitiesDiv.className = 'table-wrapper';
-		roleWrapper.appendChild(probabilitiesDiv);
-
-		statsDiv.appendChild(statsTable);
-		statsDiv.className = 'table-wrapper';
-		roleWrapper.appendChild(statsDiv);
-
-		elements.resultsContainer.appendChild(roleWrapper);
+		return html;
 	};
 
 	var buildProbabilitiesTable = function(probabilities) { // probabilities ~= {damage: [<int>], range: [<int>], surge: [<int>]};
@@ -498,121 +445,118 @@
 	};
 
 	var buildHTMLTable = function(columns, rows, defaultValue, firstColTh) { // columns ~= [{title: <string>, key: <string>}]; rows ~= [{<string:key>: <mixed>}];
-		var table = document.createElement('table'),
-			thead = document.createElement('thead'),
-			theadTr = document.createElement('tr'),
-			tbody = document.createElement('tbody');
+
+		var html = '<table><thead>';
 
 		for (var i = 0; i < columns.length; ++ i) {
-			var th = document.createElement('th'),
-				titleText = document.createTextNode(columns[i].title);
-
-			th.appendChild(titleText);
-			theadTr.appendChild(th);
+			html += '<th>' + columns[i].title + '</th>';
 		}
 
-		thead.appendChild(theadTr);
+		html += '</thead><tbody>';
 
 		for (var i = 0; i < rows.length; ++i) {
 			var tr = document.createElement('tr');
+			html += '<tr>';
 
 			for (var j = 0; j < columns.length; ++ j) {
 				var cell, valueText;
 
 				if (!!firstColTh && j === 0) {
-					cell = document.createElement('th');
+					cell = 'th';
 				} else {
-					cell = document.createElement('td');
+					cell = 'td';
 				}
 
 				if (rows[i].hasOwnProperty(columns[j].key)) {
-					valueText = document.createTextNode(rows[i][columns[j].key]);
+					valueText = rows[i][columns[j].key];
 				} else {
-					valueText = document.createTextNode(defaultValue);
+					valueText = defaultValue;
 				}
 
-				cell.appendChild(valueText);
-				tr.appendChild(cell);
+				html += '<' + cell + '>' + valueText + '</' + cell + '>';
 			}
 
-			tbody.appendChild(tr);
+			html += '</tr>';
 		}
 
-		table.appendChild(thead);
-		table.appendChild(tbody);
+		html += '</table>';
 
-		return table;
+		return html;
 	};
 
 	var getElements = function() {
-		elements.app = document.querySelector('#app');
+		elements.tabs = document.querySelector('.tabs');
+		elements.gameName = document.querySelector('.game-name');
 		elements.wrapper = document.querySelector('#wrapper');
 		elements.modal = document.querySelector('#modal');
 		elements.message = document.querySelector('#message');
-		elements.availableUl = document.querySelector('ul#available.dice');
-		elements.availableAttackUl = document.querySelector('ul#available.dice .attack ul');
-		elements.availableDefenceUl = document.querySelector('ul#available.dice .defence ul');
-		elements.selectedUl = document.querySelector('ul#selected.dice');
-		elements.selectedAttackLi = document.querySelector('ul#selected.dice .attack');
-		elements.selectedAttackUl = document.querySelector('ul#selected.dice .attack ul');
-		elements.selectedDefenceLi = document.querySelector('ul#selected.dice .defence');
-		elements.selectedDefenceUl = document.querySelector('ul#selected.dice .defence ul');
+		elements.availableUl = document.querySelector('#available.dice');
+		elements.selectedUl = document.querySelector('#selected.dice');
+		elements.selectedAttackLi = document.querySelector('#selected.dice .attack');
+		elements.selectedAttackUl = document.querySelector('#selected.dice .attack ul');
+		elements.selectedDefenceLi = document.querySelector('#selected.dice .defence');
+		elements.selectedDefenceUl = document.querySelector('#selected.dice .defence ul');
 		elements.statsButton = document.querySelector('button.stats');
 		elements.rollButton = document.querySelector('button.roll');
 		elements.noDice = document.querySelector('.no-dice');
-		elements.resultsContainer = document.querySelector('#results');
+		elements.resultsContainer = document.querySelector('#results .results');
 	};
 
 	var buildDiceList = function(d) {
-		var availableAttackFrag = document.createDocumentFragment(),
-			availableDefenceFrag = document.createDocumentFragment(),
-			selectedAttackFrag = document.createDocumentFragment(),
-			selectedDefenceFrag = document.createDocumentFragment();
+		var html = '',
+		width = d.hasOwnProperty('attack') && Object.keys(d.attack).length > 0 && d.hasOwnProperty('defence') && Object.keys(d.defence).length > 0 ? ' style="width:50%;"' : '';
 
-		// Build Available Dice, Attack list
-		for (var colour in d.attack) {
-			var li = document.createElement('li'),
-				a = document.createElement('a'),
-				img = document.createElement('img'),
-				text = document.createTextNode(colour);
+		elements.selectedAttackUl.innerHTML = '';
+		elements.selectedDefenceUl.innerHTML = '';
+		elements.resultsContainer.innerHTML = '';
+		elements.noDice.classList.remove('hidden');
+		elements.selectedAttackLi.classList.add('hidden');
+		elements.selectedDefenceLi.classList.add('hidden');
+		manager.reset();
 
-			img.setAttribute('src', 'img/dice/dice.svg#' + colour);
-			img.setAttribute('alt', colour);
-			img.setAttribute('data-colour', colour);
-			a.setAttribute('href', '#');
-			a.appendChild(img);
-			li.className = 'die';
-			li.appendChild(a);
-			availableAttackFrag.appendChild(li);
+		if (d.hasOwnProperty('attack') && Object.keys(d.attack).length > 0) {
+			html += '<li class="attack"' + width + '><h3>Attack</h3><ul>';
+
+			// Build Available Dice, Attack list
+			for (var colour in d.attack) {
+				html	+=	'<li class="die">'
+						+		'<a href="#">'
+						+			'<img '
+						+				'alt="' + colour + '" '
+						+				'data-colour="' + colour + '" '
+						+				'data-side="attack" '
+						+				'src="games/' + currentGame.key + '/dice.svg#' + colour + '" '
+						+			'/>'
+						+		'</a>'
+						+	'</li>'
+				;
+			}
+
+			html += '</ul></li>';
 		}
 
-		elements.availableAttackUl.appendChild(availableAttackFrag);
+		if (d.hasOwnProperty('defence') && Object.keys(d.defence).length > 0) {
+			html += '<li class="defence"' + width + '><h3>Defence</h3><ul>';
 
-		// Build Available Dice, Defence list
-		for (var colour in d.defence) {
-			var li = document.createElement('li'),
-				a = document.createElement('a'),
-				img = document.createElement('img'),
-				text = document.createTextNode(colour);
+			// Build Available Dice, Defence list
+			for (var colour in d.defence) {
+				html	+=	'<li class="die">'
+						+		'<a href="#">'
+						+			'<img '
+						+				'alt="' + colour + '" '
+						+				'data-colour="' + colour + '" '
+						+				'data-side="defence" '
+						+				'src="games/' + currentGame.key + '/dice.svg#' + colour + '" '
+						+			'/>'
+						+		'</a>'
+						+	'</li>'
+				;
+			}
 
-			img.setAttribute('src', 'img/dice/dice.svg#' + colour);
-			img.setAttribute('alt', colour);
-			img.setAttribute('data-colour', colour);
-			a.setAttribute('href', '#');
-			a.appendChild(img);
-			li.className = 'die';
-			li.appendChild(a);
-			availableDefenceFrag.appendChild(li);
+			html += '</ul></li>';
 		}
 
-		elements.availableDefenceUl.appendChild(availableDefenceFrag);
-
-		// Add event listeners to lists
-		elements.availableAttackUl.addEventListener('click', addDie('attack'));
-		elements.availableDefenceUl.addEventListener('click', addDie('defence'));
-
-		elements.selectedAttackUl.addEventListener('click', removeDie('attack'));
-		elements.selectedDefenceUl.addEventListener('click', removeDie('defence'));
+		elements.availableUl.innerHTML = html;
 	};
 
 	var buildDieHTML = function(colour, uuid, face) {
@@ -621,7 +565,7 @@
 			a = document.createElement('a'),
 			faceString = typeof(face) === 'undefined' ? '' : '-' + face;
 
-		img.setAttribute('src', 'img/dice/dice.svg#' + colour + faceString);
+		img.setAttribute('src', 'games/' + currentGame.key + '/dice.svg#' + colour + faceString);
 		img.setAttribute('alt', colour);
 		img.setAttribute('data-colour', colour);
 		img.setAttribute('data-uuid', uuid);
@@ -646,18 +590,16 @@
 
 		parent.appendChild(li);
 
-		selected.add(side, uuid, colour, dice[side][colour]);
+		manager.add(side, uuid, colour, dice[side][colour]);
 	};
 
-	var addDie = function(side) {
-		return function(e) {
-			e.preventDefault();
-			e.stopPropagation();
+	var addDie = function(e) {
+		e.preventDefault();
+		e.stopPropagation();
 
-			if (/img/i.test(e.target.nodeName)) {
-				addDieHTML(side, e.target.getAttribute('data-colour'));
-			}
-		};
+		if (/^img$/i.test(e.target.nodeName)) {
+			addDieHTML(e.target.getAttribute('data-side'), e.target.getAttribute('data-colour'));
+		}
 	};
 
 	var removeDie = function(side) {
@@ -665,7 +607,7 @@
 			e.preventDefault();
 			e.stopPropagation();
 
-			if (/img/i.test(e.target.nodeName)) {
+			if (/^img$/i.test(e.target.nodeName)) {
 				var imgEl = e.target,
 					aEl = imgEl.parentNode,
 					liEl = aEl.parentNode,
@@ -678,21 +620,93 @@
 
 				ulEl.removeChild(liEl);
 
-				selected.remove(side, uuid);
-
-				console.log('removing', side, colour, uuid);
+				manager.remove(side, uuid);
 			}
 		};
 	};
 
-	// Setup
-
-	UUID.setRNG(aleaInstance);
-
-	xhr.get('json/dice.json').then(JSON.parse, displayError, displayProgress).then(function(res) {
-		dice = res;
+	xhr.get('games/games.json').then(JSON.parse, displayError, displayProgress).then(function(res) {
+		games = res;
 		getElements();
-		setupListDisplay();
-		buildDiceList(dice);
+		elements.tabs.innerHTML = Template.build(games);
+		setupEventHandlers();
+		switchGame(games[0].key);
 	}).done();
+
+	var Template = (function() {
+		return {
+			build: function(items) {
+				var html = '',
+					width = Math.floor(100 / items.length);
+
+				for (var i = 0; i < items.length; ++ i) {
+					var active = i === 0 ? ' active' : '',
+						icoff = 'games/' + items[i].key + '/icon.svg#off',
+						icon = 'games/' + items[i].key + '/icon.svg#on';
+
+					html	+=	'<li class="tab' + active + '" style="width: ' + width + '%;">'
+							+		'<a href="#" data-game="' + items[i].key + '">'
+							+			'<img class="on" src="' + icon + '" />'
+							+			'<img class="off" src="' + icoff + '" />'
+							+		'</a>'
+							+	'</li>'
+					;
+				}
+
+				return html;
+			}
+		};
+	})();
+
+	var switchGame = function(gameKey) {
+		if (currentGame === null || currentGame.key !== gameKey) {
+			for (var i = 0; i < games.length; ++ i) {
+				if (games[i].key === gameKey) {
+					currentGame = games[i];
+					xhr.get('games/' + currentGame.key + '/data.json').then(JSON.parse, displayError, displayProgress).then(function(res) {
+						if (dice === null) {
+							setupListDisplay();
+						} else {
+							elements.statsButton.classList.add('hidden');
+							elements.rollButton.classList.add('hidden');
+						}
+						dice = res;
+						elements.gameName.innerText = currentGame.name;
+						buildDiceList(dice);
+					});
+				}
+			}
+		}
+	};
+
+	var findAncestorNodeOfType = function(node, type) {
+		var re = new RegExp('\^' + type + '\$', 'i');
+
+		if (re.test(node.parentNode.nodeName) || /^body$/.test(node.parentNode.nodeName)) {
+			return node.parentNode;
+		} else if (!!node.parentNode) {
+			return findAncestorNodeOfType(node.parentNode, type);
+		} else {
+			return node;
+		}
+	};
+
+	var setupEventHandlers = function() {
+		elements.tabs.addEventListener('click', function(e) {
+			var node;
+
+			e.preventDefault();
+			e.stopPropagation();
+
+			if (/^img$/i.test(e.target.nodeName)) {
+				node = findAncestorNodeOfType(e.target, 'a');
+			} else if (/^a$/i.test(e.target.nodeName)) {
+				node = e.target;
+			}
+
+			switchGame(node.getAttribute('data-game'));
+			document.querySelector('.tab.active').classList.remove('active');
+			findAncestorNodeOfType(e.target, 'li').classList.add('active');
+		});
+	};
 });

@@ -1,23 +1,22 @@
 <!DOCTYPE html>
-<html>
+<!--<html lang="en" manifest="manifest.appcache">-->
+<html lang="en">
 <head>
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
 <title></title>
 <script data-main="app" src="bower_components/requirejs/require.js"></script>
 <link rel="stylesheet" href="css/style.css" />
 </head>
-<body lang="en">
+<body>
 <div id="app">
-	<h1>Imperial Assault Dice</h1>
+	<h1><!--<span><a href="#" class="menu button">[+]</a></span>--><span class="game-name">Star Wars</span> Dice</h1>
 	<div id="wrapper">
 		<div class="col">
-			<h2>Available Dice</h2>
-			<ul id="available" class="dice">
-				<li class="attack"><h3>Attack</h3><ul></ul></li>
-				<li class="defence"><h3>Defence</h3><ul></ul></li>
-			</ul>
+			<h2>Available</h2>
+			<ul id="available" class="dice"></ul>
 		</div>
 		<div class="col">
-			<h2>Selected Dice</h2>
+			<h2>Selected</h2>
 			<h3 class="no-dice">No dice...</h3>
 			<ul id="selected" class="dice">
 				<li class="attack"><h3>Attack</h3><ul></ul></li>
@@ -26,13 +25,15 @@
 		</div>
 		<div id="results">
 			<h2>Results</h2>
+			<div class="results"></div>
 		</div>
 	</div>
 	<div id="modal">
 		<h2 id="message">Loading...</h2>
 	</div>
-	<button class="stats" disabled="disabled">Stats</button>
-	<button class="roll" disabled="disabled">Roll</button>
+	<button class="stats hidden" disabled="disabled">Stats</button>
+	<button class="roll hidden" disabled="disabled">Roll</button>
+	<ul class="tabs"></ul>
 </div>
 </body>
 </html>

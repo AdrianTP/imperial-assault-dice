@@ -1,0 +1,262 @@
+{
+	"attack": {
+		"red": {
+			"faces": [
+				{
+					"hit": 1,
+					"critical": 0,
+					"accuracy": 0
+				},
+				{
+					"hit": 1,
+					"critical": 0,
+					"accuracy": 0
+				},
+				{
+					"hit": 2,
+					"critical": 0,
+					"accuracy": 0
+				},
+				{
+					"hit": 0,
+					"critical": 1,
+					"accuracy": 0
+				},
+				{
+					"hit": 0,
+					"critical": 1,
+					"accuracy": 0
+				},
+				{
+					"hit": 0,
+					"critical": 0,
+					"accuracy": 1
+				},
+				{
+					"hit": 0,
+					"critical": 0,
+					"accuracy": 0
+				},
+				{
+					"hit": 0,
+					"critical": 0,
+					"accuracy": 0
+				}
+			],
+			"means": {
+				"hit": null,
+				"critical": null,
+				"accuracy": null
+			},
+			"maximums": {
+				"hit": null,
+				"critical": null,
+				"accuracy": null
+			},
+			"medians": {
+				"hit": null,
+				"critical": null,
+				"accuracy": null
+			},
+			"minimums": {
+				"hit": null,
+				"critical": null,
+				"accuracy": null
+			},
+			"modes": {
+				"hit": null,
+				"critical": null,
+				"accuracy": null
+			},
+			"probabilities": {
+				"hit": [],
+				"critical": [],
+				"accuracy": []
+			},
+			"totals": {
+				"all": {
+					"hit": null,
+					"critical": null,
+					"accuracy": null
+				},
+				"counts": {
+					"hit": [],
+					"critical": [],
+					"accuracy": []
+				}
+			}
+		},
+		"blue": {
+			"faces": [
+				{
+					"hit": 1,
+					"critical": 0,
+					"accuracy": 0
+				},
+				{
+					"hit": 1,
+					"critical": 0,
+					"accuracy": 0
+				},
+				{
+					"hit": 1,
+					"critical": 0,
+					"accuracy": 0
+				},
+				{
+					"hit": 1,
+					"critical": 0,
+					"accuracy": 0
+				},
+				{
+					"hit": 0,
+					"critical": 1,
+					"accuracy": 0
+				},
+				{
+					"hit": 0,
+					"critical": 1,
+					"accuracy": 0
+				},
+				{
+					"hit": 0,
+					"critical": 0,
+					"accuracy": 1
+				},
+				{
+					"hit": 0,
+					"critical": 0,
+					"accuracy": 1
+				}
+			],
+			"means": {
+				"hit": null,
+				"critical": null,
+				"accuracy": null
+			},
+			"maximums": {
+				"hit": null,
+				"critical": null,
+				"accuracy": null
+			},
+			"medians": {
+				"hit": null,
+				"critical": null,
+				"accuracy": null
+			},
+			"minimums": {
+				"hit": null,
+				"critical": null,
+				"accuracy": null
+			},
+			"modes": {
+				"hit": null,
+				"critical": null,
+				"accuracy": null
+			},
+			"probabilities": {
+				"hit": [],
+				"critical": [],
+				"accuracy": []
+			},
+			"totals": {
+				"all": {
+					"hit": null,
+					"critical": null,
+					"accuracy": null
+				},
+				"counts": {
+					"hit": [],
+					"critical": [],
+					"accuracy": []
+				}
+			}
+		},
+		"black": {
+			"faces": [
+				{
+					"hit": 1,
+					"critical": 0,
+					"accuracy": 0
+				},
+				{
+					"hit": 1,
+					"critical": 0,
+					"accuracy": 0
+				},
+				{
+					"hit": 1,
+					"critical": 0,
+					"accuracy": 0
+				},
+				{
+					"hit": 1,
+					"critical": 0,
+					"accuracy": 0
+				},
+				{
+					"hit": 1,
+					"critical": 1,
+					"accuracy": 0
+				},
+				{
+					"hit": 1,
+					"critical": 1,
+					"accuracy": 0
+				},
+				{
+					"hit": 0,
+					"critical": 0,
+					"accuracy": 0
+				},
+				{
+					"hit": 0,
+					"critical": 0,
+					"accuracy": 0
+				}
+			],
+			"means": {
+				"hit": null,
+				"critical": null,
+				"accuracy": null
+			},
+			"maximums": {
+				"hit": null,
+				"critical": null,
+				"accuracy": null
+			},
+			"medians": {
+				"hit": null,
+				"critical": null,
+				"accuracy": null
+			},
+			"minimums": {
+				"hit": null,
+				"critical": null,
+				"accuracy": null
+			},
+			"modes": {
+				"hit": null,
+				"critical": null,
+				"accuracy": null
+			},
+			"probabilities": {
+				"hit": [],
+				"critical": [],
+				"accuracy": []
+			},
+			"totals": {
+				"all": {
+					"hit": null,
+					"critical": null,
+					"accuracy": null
+				},
+				"counts": {
+					"hit": [],
+					"critical": [],
+					"accuracy": []
+				}
+			}
+		}
+	}
+}

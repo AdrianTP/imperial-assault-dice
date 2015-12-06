@@ -42,6 +42,9 @@
 		reset: function() {
 			list = [];
 			collisions = 0;
+		},
+		showRNG: function() {
+			return random;
 		}
 	};
 });

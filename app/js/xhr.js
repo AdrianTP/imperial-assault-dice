@@ -10,6 +10,7 @@
 	else this[name] = definition()
 })('XHR', function(require) {
 	var q = require('q/q');
+
 	return {
 		get: function(url) {
 			var deferred = q.defer(),
