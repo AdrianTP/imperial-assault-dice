@@ -243,6 +243,11 @@ th, td {
 	width: 25%;
 }
 
+th img, td img {
+	vertical-align: middle;
+	width: 1.2em;
+}
+
 @media (min-width: 1000px) {
 	.col {
 		display: inline-block;

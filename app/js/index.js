@@ -378,11 +378,11 @@
 		//	2	50%		0%		0%
 		//	3	33.3%	0%		0%
 
-		var columns = [{ title: 'Values', key: 'value' }],
+		var columns = [{ title: 'Values', key: 'value', type: 'text' }],
 			rows = [];
 
 		for (var effect in probabilities) {
-			columns.push({ title: capitaliseString(effect), key: effect });
+			columns.push({ title: effect, key: effect, type: 'icon' });
 
 			for (var i = 0; i < probabilities[effect].length; ++ i) {
 				if (typeof(rows[i]) === 'undefined') {
@@ -408,14 +408,14 @@
 		//	mode	2			0			0
 		//	mean	2.167		0.167		0
 
-		var columns = [{ title: 'Statistic', key: 'statistic'}],
+		var columns = [{ title: 'Statistic', key: 'statistic', type: 'text'}],
 			rows = [],
 			reports = [
-				{ name: 'maximum', key: 'maximums' },
-				{ name: 'minimum', key: 'minimums' },
-				{ name: 'median', key: 'medians' },
-				{ name: 'mode', key: 'modes' },
-				{ name: 'average', key: 'means' }
+				{ name: 'maximum', key: 'maximums', type: 'text' },
+				{ name: 'minimum', key: 'minimums', type: 'text'  },
+				{ name: 'median', key: 'medians', type: 'text'  },
+				{ name: 'mode', key: 'modes', type: 'text'  },
+				{ name: 'average', key: 'means', type: 'text'  }
 			];
 
 		for (var i = 0; i < reports.length; ++ i) {
@@ -426,7 +426,7 @@
 				});
 
 				if (filteredCols.length === 0) {
-					columns.push({ title: capitaliseString(effect), key: effect});
+					columns.push({ title: effect, key: effect, type: 'icon' });
 				}
 
 				if (/array]$/i.test(Object.prototype.toString.call(processed[reports[i].key][effect]))) {
@@ -447,7 +447,16 @@
 		var html = '<table><thead>';
 
 		for (var i = 0; i < columns.length; ++ i) {
-			html += '<th>' + columns[i].title + '</th>';
+			var title = columns[i].type === 'icon' ? '<img '
+										+				'alt="' + columns[i].title + '" '
+										+				'data-colour="' + columns[i].title + '" '
+										+				'data-side="attack" '
+										+				'src="games/' + currentGame.key + '/effects.svg#' + columns[i].title + '" '
+										+			'/>' : columns[i].title;
+
+			console.log(columns[i].type);
+
+			html += '<th>' + title + '</th>';
 		}
 
 		html += '</thead><tbody>';
