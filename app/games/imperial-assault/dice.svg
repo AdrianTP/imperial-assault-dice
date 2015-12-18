@@ -98,8 +98,8 @@
 			Z
 		" />
 	</symbol>
-	<symbol id="dodge" width="500" height="500" viewBox="0 0 1000 1000"><!-- Illustrator rounded to whole numbers -->
-		<title>dodge</title>
+	<symbol id="evade" width="500" height="500" viewBox="0 0 1000 1000"><!-- Illustrator rounded to whole numbers -->
+		<title>evade</title>
 		<path d="
 			M 229 630
 			c -54 -112 -34 -249 58 -342
@@ -120,8 +120,8 @@
 			Z
 		" />
 	</symbol>
-	<symbol id="miss" width="500" height="500" viewBox="0 0 1000 1000"><!-- Illustrator too lazy to round to whole numbers -->
-		<title>miss</title>
+	<symbol id="dodge" width="500" height="500" viewBox="0 0 1000 1000"><!-- Illustrator too lazy to round to whole numbers -->
+		<title>dodge</title>
 		<!-- Fat -->
 		<path d="
 			M 917.056 225.365
@@ -485,7 +485,7 @@
 	<g id="black-0" class="sprite black-die">
 		<title>black 0</title>
 		<use xlink:href="#black-bak" class="border"></use>
-		<use xlink:href="#dodge" x="250" y="250" class="icon"></use>
+		<use xlink:href="#evade" x="250" y="250" class="icon"></use>
 	</g>
 	<g id="black-1" class="sprite black-die">
 		<title>black 1</title>
@@ -520,7 +520,7 @@
 	<g id="white" class="sprite white-die">
 		<title>white</title>
 		<use xlink:href="#white-bak" class="border"></use>
-		<use xlink:href="#miss" x="250" y="250" class="icon"></use>
+		<use xlink:href="#dodge" x="250" y="250" class="icon"></use>
 	</g>
 	<g id="white-0" class="sprite white-die">
 		<title>white 0</title>
@@ -529,7 +529,7 @@
 	<g id="white-1" class="sprite white-die">
 		<title>white 1</title>
 		<use xlink:href="#white-bak" class="border"></use>
-		<use xlink:href="#dodge" x="250" y="250" class="icon"></use>
+		<use xlink:href="#evade" x="250" y="250" class="icon"></use>
 	</g>
 	<g id="white-2" class="sprite white-die">
 		<title>white 2</title>
@@ -539,18 +539,18 @@
 	<g id="white-3" class="sprite white-die">
 		<title>white 3</title>
 		<use xlink:href="#white-bak" class="border"></use>
-		<use xlink:href="#dodge" x="80" y="30" class="icon"></use>
+		<use xlink:href="#evade" x="80" y="30" class="icon"></use>
 		<use xlink:href="#block" x="420" y="463" class="icon"></use>
 	</g>
 	<g id="white-4" class="sprite white-die">
 		<title>white 4</title>
 		<use xlink:href="#white-bak" class="border"></use>
-		<use xlink:href="#dodge" x="80" y="30" class="icon"></use>
+		<use xlink:href="#evade" x="80" y="30" class="icon"></use>
 		<use xlink:href="#block" x="420" y="463" class="icon"></use>
 	</g>
 	<g id="white-5" class="sprite white-die">
 		<title>white 5</title>
 		<use xlink:href="#white-bak" class="border"></use>
-		<use xlink:href="#miss" x="250" y="250" class="icon"></use>
+		<use xlink:href="#dodge" x="250" y="250" class="icon"></use>
 	</g>
 </svg>

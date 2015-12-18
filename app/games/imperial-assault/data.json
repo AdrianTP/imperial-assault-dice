@@ -406,59 +406,59 @@
 			"faces": [
 				{
 					"block": 0,
-					"dodge": 1,
-					"miss": 0
+					"evade": 1,
+					"dodge": 0
 				},
 				{
 					"block": 1,
-					"dodge": 0,
-					"miss": 0
+					"evade": 0,
+					"dodge": 0
 				},
 				{
 					"block": 1,
-					"dodge": 0,
-					"miss": 0
+					"evade": 0,
+					"dodge": 0
 				},
 				{
 					"block": 2,
-					"dodge": 0,
-					"miss": 0
+					"evade": 0,
+					"dodge": 0
 				},
 				{
 					"block": 2,
-					"dodge": 0,
-					"miss": 0
+					"evade": 0,
+					"dodge": 0
 				},
 				{
 					"block": 3,
-					"dodge": 0,
-					"miss": 0
+					"evade": 0,
+					"dodge": 0
 				}
 			],
 			"means": {
 				"block": 1.5,
-				"dodge": 0.167,
-				"miss": 0
+				"evade": 0.167,
+				"dodge": 0
 			},
 			"maximums": {
 				"block": 3,
-				"dodge": 1,
-				"miss": 0
+				"evade": 1,
+				"dodge": 0
 			},
 			"medians": {
 				"block": 1.5,
-				"dodge": 0,
-				"miss": 0
+				"evade": 0,
+				"dodge": 0
 			},
 			"minimums": {
 				"block": 0,
-				"dodge": 0,
-				"miss": 0
+				"evade": 0,
+				"dodge": 0
 			},
 			"modes": {
 				"block": [1, 2],
-				"dodge": 0,
-				"miss": 0
+				"evade": 0,
+				"dodge": 0
 			},
 			"probabilities": {
 				"block": [
@@ -467,19 +467,19 @@
 					0.333,
 					0.167
 				],
-				"dodge": [
+				"evade": [
 					0.833,
 					0.167
 				],
-				"miss": [
+				"dodge": [
 					1
 				]
 			},
 			"totals": {
 				"all": {
 					"block": 9,
-					"dodge": 1,
-					"miss": 0
+					"evade": 1,
+					"dodge": 0
 				},
 				"counts": {
 					"block": [
@@ -488,11 +488,11 @@
 						2,
 						1
 					],
-					"dodge": [
+					"evade": [
 						5,
 						1
 					],
-					"miss": [
+					"dodge": [
 						6
 					]
 				}
@@ -502,70 +502,70 @@
 			"faces": [
 				{
 					"block": 0,
-					"dodge": 0,
-					"miss": 0
+					"evade": 0,
+					"dodge": 0
 				},
 				{
 					"block": 0,
-					"dodge": 1,
-					"miss": 0
+					"evade": 1,
+					"dodge": 0
 				},
 				{
 					"block": 1,
-					"dodge": 0,
-					"miss": 0
+					"evade": 0,
+					"dodge": 0
 				},
 				{
 					"block": 1,
-					"dodge": 1,
-					"miss": 0
+					"evade": 1,
+					"dodge": 0
 				},
 				{
 					"block": 1,
-					"dodge": 1,
-					"miss": 0
+					"evade": 1,
+					"dodge": 0
 				},
 				{
 					"block": 0,
-					"dodge": 0,
-					"miss": 1
+					"evade": 0,
+					"dodge": 1
 				}
 			],
 			"means": {
 				"block": 0.5,
-				"dodge": 0.5,
-				"miss": 0.167
+				"evade": 0.5,
+				"dodge": 0.167
 			},
 			"maximums": {
 				"block": 1,
-				"dodge": 1,
-				"miss": 1
+				"evade": 1,
+				"dodge": 1
 			},
 			"medians": {
 				"block": 0.5,
-				"dodge": 0.5,
-				"miss": 0
+				"evade": 0.5,
+				"dodge": 0
 			},
 			"minimums": {
 				"block": 0,
-				"dodge": 0,
-				"miss": 0
+				"evade": 0,
+				"dodge": 0
 			},
 			"modes": {
 				"block": [0, 1],
-				"dodge": [0, 1],
-				"miss": 0
+				"evade": [0, 1],
+				"dodge": 0
 			},
 			"probabilities": {
 				"block": [
 					0.5,
 					0.5
 				],
-				"dodge": [
+				"evade": [
 					0.5,
 					0.5
 				],
-				"miss": [
+				"dodge": [
 					0.833,
 					0.167
 				]
@@ -573,19 +573,19 @@
 			"totals": {
 				"all": {
 					"block": 3,
-					"dodge": 3,
-					"miss": 1
+					"evade": 3,
+					"dodge": 1
 				},
 				"counts": {
 					"block": [
 						3,
 						3
 					],
-					"dodge": [
+					"evade": [
 						3,
 						3
 					],
-					"miss": [
+					"dodge": [
 						5,
 						1
 					]
