@@ -11,12 +11,12 @@
 	<symbol id="blockIcon" viewBox="0 0 1000 1000"><!-- Done by hand -->
 		<title>block</title>
 		<path d="
-			M 0 933
-			Q 500 744, 1000 933
-			Q 587 594, 500 67
-			Q 413 594, 0 933
-			Z
-		" />
+			M500,933
+			c58-351.333,224.667-640,500-866
+			C666.667,193,333.333,193,0,67
+			C275.333,293,442,581.667,500,933
+			z
+		"/>
 	</symbol>
 	<symbol id="evadeIcon" viewBox="0 0 1000 1000"><!-- Illustrator rounded to whole numbers -->
 		<title>evade</title>
