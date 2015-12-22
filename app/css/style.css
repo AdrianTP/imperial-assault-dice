@@ -102,6 +102,35 @@ h1 {
 	width: 100%;
 }
 
+.enter, .exit {
+	display: block;
+	float: right;
+	vertical-align: middle;
+}
+
+.enter img, .exit img {
+	height: 1em;
+	width: 1em;
+	vertical-align: middle;
+}
+
+.exit {
+	display: none;
+}
+
+.fullscreen .enter {
+	display: none;
+}
+
+.fullscreen .exit {
+	display: block;
+}
+
+#app.fullscreen:-webkit-full-screen {
+	width: 100%;
+	height: 100%;
+}
+
 h2 {
 	background-color: #555;
 	font-size: 3em;

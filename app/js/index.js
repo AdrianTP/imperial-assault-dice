@@ -492,6 +492,9 @@
 	};
 
 	var getElements = function() {
+		elements.app = document.querySelector('#app');
+		elements.fullscreenEnter = document.querySelector('.enter');
+		elements.fullscreenExit = document.querySelector('.exit');
 		elements.tabs = document.querySelector('.tabs');
 		elements.gameName = document.querySelector('.game-name');
 		elements.wrapper = document.querySelector('#wrapper');
@@ -698,6 +701,34 @@
 		}
 	};
 
+	var requestFullScreen = function() {
+		if (!document.fullscreenElement && !document.mozFullScreenElement && !document.webkitFullscreenElement && !document.msFullscreenElement ) {
+			if (elements.app.requestFullscreen) {
+				elements.app.requestFullscreen();
+			} else if (elements.app.msRequestFullscreen) {
+				elements.app.msRequestFullscreen();
+			} else if (elements.app.mozRequestFullScreen) {
+				elements.app.mozRequestFullScreen();
+			} else if (elements.app.webkitRequestFullscreen) {
+				elements.app.webkitRequestFullscreen();
+			}
+			elements.app.classList.add('fullscreen');
+		}
+	};
+
+	var exitFullScreen = function() {
+		if (document.exitFullscreen) {
+			document.exitFullscreen();
+		} else if (document.msExitFullscreen) {
+			document.msExitFullscreen();
+		} else if (document.mozCancelFullScreen) {
+			document.mozCancelFullScreen();
+		} else if (document.webkitExitFullscreen) {
+			document.webkitExitFullscreen();
+		}
+		elements.app.classList.remove('fullscreen');
+	};
+
 	var setupEventHandlers = function() {
 		elements.tabs.addEventListener('click', function(e) {
 			var node;
@@ -714,6 +745,20 @@
 			switchGame(node.getAttribute('data-game'));
 			document.querySelector('.tab.active').classList.remove('active');
 			findAncestorNodeOfType(e.target, 'li').classList.add('active');
+		});
+
+		elements.fullscreenEnter.addEventListener('click', function(e) {
+			e.preventDefault();
+			e.stopPropagation();
+
+			requestFullScreen();
+		});
+
+		elements.fullscreenExit.addEventListener('click', function(e) {
+			e.preventDefault();
+			e.stopPropagation();
+
+			exitFullScreen();
 		});
 	};
 });
