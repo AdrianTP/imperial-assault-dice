@@ -1,4 +1,4 @@
-Imperial Assault (and Other Games) Dice Probability Calculator and Roller
+Imperial Assault (and Other Games) Dice Probability Calculator (and Roller)
 ======
 ## Installation for Development
 
