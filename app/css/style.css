@@ -14,6 +14,11 @@ body {
 	-ms-touch-action: manipulation;
 }
 
+.fullscreen, .fullscreen body {
+	height: 100%;
+	width: 100%;
+}
+
 a,
 a:active,
 a:visited {
@@ -124,11 +129,6 @@ h1 {
 
 .fullscreen .exit {
 	display: block;
-}
-
-#app.fullscreen:-webkit-full-screen {
-	width: 100%;
-	height: 100%;
 }
 
 h2 {

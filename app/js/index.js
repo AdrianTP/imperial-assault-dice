@@ -492,7 +492,6 @@
 	};
 
 	var getElements = function() {
-		elements.app = document.querySelector('#app');
 		elements.fullscreenEnter = document.querySelector('.enter');
 		elements.fullscreenExit = document.querySelector('.exit');
 		elements.tabs = document.querySelector('.tabs');
@@ -703,16 +702,16 @@
 
 	var requestFullScreen = function() {
 		if (!document.fullscreenElement && !document.mozFullScreenElement && !document.webkitFullscreenElement && !document.msFullscreenElement ) {
-			if (elements.app.requestFullscreen) {
-				elements.app.requestFullscreen();
-			} else if (elements.app.msRequestFullscreen) {
-				elements.app.msRequestFullscreen();
-			} else if (elements.app.mozRequestFullScreen) {
-				elements.app.mozRequestFullScreen();
-			} else if (elements.app.webkitRequestFullscreen) {
-				elements.app.webkitRequestFullscreen();
+			if (document.documentElement.requestFullscreen) {
+				document.documentElement.requestFullscreen();
+			} else if (document.documentElement.msRequestFullscreen) {
+				document.documentElement.msRequestFullscreen();
+			} else if (document.documentElement.mozRequestFullScreen) {
+				document.documentElement.mozRequestFullScreen();
+			} else if (document.documentElement.webkitRequestFullscreen) {
+				document.documentElement.webkitRequestFullscreen();
 			}
-			elements.app.classList.add('fullscreen');
+			document.documentElement.classList.add('fullscreen');
 		}
 	};
 
@@ -726,7 +725,7 @@
 		} else if (document.webkitExitFullscreen) {
 			document.webkitExitFullscreen();
 		}
-		elements.app.classList.remove('fullscreen');
+		document.documentElement.classList.remove('fullscreen');
 	};
 
 	var setupEventHandlers = function() {
