@@ -1,0 +1,32 @@
+CACHE MANIFEST
+# 2015-12-22T05:36:00Z
+
+bower_components/q/q.js
+bower_components/requirejs/require.js
+css/style.css
+games/armada/data.json
+games/armada/dice.svg
+games/armada/effects.svg
+games/armada/icon.svg
+games/imperial-assault/data.json
+games/imperial-assault/dice.svg
+games/imperial-assault/effects.svg
+games/imperial-assault/icon.svg
+games/x-wing/data.json
+games/x-wing/dice.svg
+games/x-wing/effects.svg
+games/x-wing/icon.svg
+games/games.json
+img/icons/fullscreen.svg
+js/Alea.js
+js/dice-manager.js
+js/index.js
+js/uuid.js
+js/xhr.js
+app.js
+index.html
+
+NETWORK:
+*
+
+FALLBACK:
