@@ -1,5 +1,5 @@
 CACHE MANIFEST
-# 2015-12-22T05:36:00Z
+# 2015-12-22T20:54:00Z
 
 bower_components/q/q.js
 bower_components/requirejs/require.js
@@ -18,6 +18,16 @@ games/x-wing/effects.svg
 games/x-wing/icon.svg
 games/games.json
 img/icons/fullscreen.svg
+img/icons/logo/favicon.ico
+img/icons/logo/apple-touch-icon.png
+img/icons/logo/apple-touch-icon-57x57.png
+img/icons/logo/apple-touch-icon-72x72.png
+img/icons/logo/apple-touch-icon-76x76.png
+img/icons/logo/apple-touch-icon-114x114.png
+img/icons/logo/apple-touch-icon-120x120.png
+img/icons/logo/apple-touch-icon-144x144.png
+img/icons/logo/apple-touch-icon-152x152.png
+img/icons/logo/apple-touch-icon-180x180.png
 js/Alea.js
 js/dice-manager.js
 js/index.js
