@@ -6,5 +6,9 @@
 	{
 		"key": "armada",
 		"name": "Armada"
+	},
+	{
+		"key": "x-wing",
+		"name": "X-Wing"
 	}
 ]

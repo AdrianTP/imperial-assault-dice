@@ -1,0 +1,162 @@
+{
+	"attack": {
+		"red": {
+			"faces": [
+				{
+					"hit": 0,
+					"critical": 0,
+					"focus": 1
+				},
+				{
+					"hit": 0,
+					"critical": 0,
+					"focus": 1
+				},
+				{
+					"hit": 1,
+					"critical": 0,
+					"focus": 0
+				},
+				{
+					"hit": 1,
+					"critical": 0,
+					"focus": 0
+				},
+				{
+					"hit": 1,
+					"critical": 0,
+					"focus": 0
+				},
+				{
+					"hit": 0,
+					"critical": 1,
+					"focus": 0
+				},
+				{
+					"hit": 0,
+					"critical": 0,
+					"focus": 0
+				},
+				{
+					"hit": 0,
+					"critical": 0,
+					"focus": 0
+				}
+			],
+			"means": {
+				"hit": null,
+				"critical": null,
+				"focus": null
+			},
+			"maximums": {
+				"hit": null,
+				"critical": null,
+				"focus": null
+			},
+			"medians": {
+				"hit": null,
+				"critical": null,
+				"focus": null
+			},
+			"minimums": {
+				"hit": null,
+				"critical": null,
+				"focus": null
+			},
+			"modes": {
+				"hit": null,
+				"critical": null,
+				"focus": null
+			},
+			"probabilities": {
+				"hit": [],
+				"critical": [],
+				"focus": []
+			},
+			"totals": {
+				"all": {
+					"hit": null,
+					"critical": null,
+					"focus": null
+				},
+				"counts": {
+					"hit": [],
+					"critical": [],
+					"focus": []
+				}
+			}
+		}
+	},
+	"defence": {
+		"green": {
+			"faces": [
+				{
+					"evade": 0,
+					"focus": 1
+				},
+				{
+					"evade": 0,
+					"focus": 1
+				},
+				{
+					"evade": 1,
+					"focus": 0
+				},
+				{
+					"evade": 1,
+					"focus": 0
+				},
+				{
+					"evade": 1,
+					"focus": 0
+				},
+				{
+					"evade": 0,
+					"focus": 0
+				},
+				{
+					"evade": 0,
+					"focus": 0
+				},
+				{
+					"evade": 0,
+					"focus": 0
+				}
+			],
+			"means": {
+				"evade": null,
+				"focus": null
+			},
+			"maximums": {
+				"evade": null,
+				"focus": null
+			},
+			"medians": {
+				"evade": null,
+				"focus": null
+			},
+			"minimums": {
+				"evade": null,
+				"focus": null
+			},
+			"modes": {
+				"evade": null,
+				"focus": null
+			},
+			"probabilities": {
+				"evade": [],
+				"focus": []
+			},
+			"totals": {
+				"all": {
+					"evade": null,
+					"focus": null
+				},
+				"counts": {
+					"evade": [],
+					"focus": []
+				}
+			}
+		}
+	}
+}
