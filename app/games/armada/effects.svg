@@ -8,7 +8,7 @@
 	]]></style>
 	</defs>
 	<!-- Effect Icons -->
-	<symbol id="hitIcon" viewBox="0 0 1000 1000"><!-- Illustrator -->
+	<symbol id="hitIcon" viewBox="100 100 900 900"><!-- Illustrator -->
 		<title>hit</title>
 		<path d="
 			M926.745,71.543c-0.353,0.295-0.704,0.587-1.057,0.882c0.294-0.353,0.586-0.704,0.882-1.057
@@ -24,7 +24,7 @@
 			c-196.512-49.127-176.121-176.544,33.933-433.803C913.036,88.179,919.933,79.968,926.745,71.543z
 		" />
 	</symbol>
-	<symbol id="criticalIcon" viewBox="0 0 1000 1000"><!-- Illustrator -->
+	<symbol id="criticalIcon" viewBox="100 100 900 900"><!-- Illustrator -->
 		<title>critical</title>
 		<path d="
 			M300.973,797.104c2.434-10.69,4.688-20.63,6.958-30.564
@@ -66,7 +66,7 @@
 			C85.624,199.575,85.707,199.432,85.79,199.29z
 		"/>
 	</symbol>
-	<symbol id="accuracyIcon" viewBox="0 0 1000 1000"><!-- Illustrator -->
+	<symbol id="accuracyIcon" viewBox="100 100 900 900"><!-- Illustrator -->
 		<title>accuracy</title>
 		<path d="
 			M811.786,620.48c18.54-77.729,6.911-158.996-30.571-227.701l-0.165,0.096c-40.056-73.352-107.994-129.278-189.565-153.571

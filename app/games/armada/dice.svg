@@ -196,15 +196,15 @@
 	<!-- Dice Backgrounds -->
 	<symbol id="red-bak" width="1000" height="1000" viewBox="0 0 1000 1000">
 		<title>red background</title>
-		<polygon points="-0.013,933 499.994,66.964 1000,933" fill="#DD0000" />
+		<polygon points="0,933 500,67 1000,933" fill="#DD0000" />
 	</symbol>
 	<symbol id="blue-bak" width="1000" height="1000" viewBox="0 0 1000 1000">
 		<title>blue background</title>
-		<polygon points="-0.013,933 499.994,66.964 1000,933" fill="#000099" />
+		<polygon points="0,933 500,67 1000,933" fill="#000099" />
 	</symbol>
 	<symbol id="black-bak" width="1000" height="1000" viewBox="0 0 1000 1000">
 		<title>black background</title>
-		<polygon points="-0.013,933 499.994,66.964 1000,933" fill="#000000" />
+		<polygon points="0,933 500,67 1000,933" fill="#000000" />
 	</symbol>
 	<!-- Red Dice -->
 	<g id="red" class="sprite">
