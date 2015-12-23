@@ -55,18 +55,18 @@
 	<!-- Effects -->
 	<g id="hit" class="icon">
 		<title>hit</title>
-		<use xlink:href="#hitIcon" class="used"></use>
+		<use xlink:href="#hitIcon" class="used" />
 	</g>
 	<g id="critical" class="icon">
 		<title>critical</title>
-		<use xlink:href="#criticalIcon" class="used"></use>
+		<use xlink:href="#criticalIcon" class="used" />
 	</g>
 	<g id="focus" class="icon">
 		<title>focus</title>
-		<use xlink:href="#focusIcon" class="used"></use>
+		<use xlink:href="#focusIcon" class="used" />
 	</g>
 	<g id="evade" class="icon">
 		<title>evade</title>
-		<use xlink:href="#evadeIcon" class="used"></use>
+		<use xlink:href="#evadeIcon" class="used" />
 	</g>
 </svg>

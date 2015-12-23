@@ -302,13 +302,13 @@
 						colour = list[role][i].colour;
 
 					html	+=	'<li class="die">'
-							+		'<a href="#" '
-							+			'data-colour="' + colour + '" '
-							+			'data-uuid="' + uuid + '" '
-							+		'>'
-							+			'<object type="image/svg+xml" '
+							+		'<a class="svg" href="#">'
+							+			'<div class="object-wrapper" '
+							+				'data-colour="' + colour + '" '
+							+				'data-uuid="' + uuid + '" '
+							+			'><object type="image/svg+xml" width="100%" height="100%" '
 							+				'data="games/' + currentGame.key + '/dice.svg#' + colour + face + '" '
-							+			'></object>'
+							+			'></object></div>'
 							+		'</a>'
 							+	'</li>'
 					;
@@ -447,11 +447,11 @@
 		var html = '<table><thead>';
 
 		for (var i = 0; i < columns.length; ++ i) {
-			var title = columns[i].type === 'icon' ? '<object type="image/svg+xml" '
+			var title = columns[i].type === 'icon' ? '<div class="object-wrapper"><object type="image/svg+xml" width="100%" height="100%" '
 //										+				'data-colour="' + columns[i].title + '" '
 //										+				'data-side="attack" '
 										+				'data="games/' + currentGame.key + '/effects.svg#' + columns[i].title + '" '
-										+			'></object>' : columns[i].title;
+										+			'></object></div>' : columns[i].title;
 
 			html += '<th>' + title + '</th>';
 		}
@@ -526,13 +526,13 @@
 			// Build Available Dice, Attack list
 			for (var colour in d.attack) {
 				html	+=	'<li class="die">'
-						+		'<a href="#" '
-						+			'data-colour="' + colour + '" '
-						+			'data-side="attack" '
-						+		'>'
-						+			'<object type="image/svg+xml" '
+						+		'<a class="svg" href="#">'
+						+			'<div class="object-wrapper" '
+						+				'data-colour="' + colour + '" '
+						+				'data-side="attack" '
+						+			'><object type="image/svg+xml" width="100%" height="100%" '
 						+				'data="games/' + currentGame.key + '/dice.svg#' + colour + '" '
-						+			'></object>'
+						+			'></object></div>'
 						+		'</a>'
 						+	'</li>'
 				;
@@ -547,13 +547,13 @@
 			// Build Available Dice, Defence list
 			for (var colour in d.defence) {
 				html	+=	'<li class="die">'
-						+		'<a href="#" '
-						+			'data-colour="' + colour + '" '
-						+			'data-side="defence" '
-						+		'>'
-						+			'<object type="image/svg+xml" '
+						+		'<a class="svg" href="#">'
+						+			'<div class="object-wrapper" '
+						+				'data-colour="' + colour + '" '
+						+				'data-side="defence" '
+						+			'><object type="image/svg+xml" width="100%" height="100%" '
 						+				'data="games/' + currentGame.key + '/dice.svg#' + colour + '" '
-						+			'></object>'
+						+			'></object></div>'
 						+		'</a>'
 						+	'</li>'
 				;
@@ -568,15 +568,21 @@
 	var buildDieHTML = function(colour, uuid, face) {
 		var li = document.createElement('li'),
 			img = document.createElement('object'),
+			wrap = document.createElement('div'),
 			a = document.createElement('a'),
 			faceString = typeof(face) === 'undefined' ? '' : '-' + face;
 
 		img.setAttribute('type', 'image/svg+xml');
+		img.setAttribute('width', '100%');
+		img.setAttribute('height', '100%');
 		img.setAttribute('data', 'games/' + currentGame.key + '/dice.svg#' + colour + faceString);
+		wrap.className = 'object-wrapper';
+		wrap.setAttribute('data-colour', colour);
+		wrap.setAttribute('data-uuid', uuid);
+		a.className = 'svg';
 		a.setAttribute('href', '#');
-		a.setAttribute('data-colour', colour);
-		a.setAttribute('data-uuid', uuid);
-		a.appendChild(img);
+		wrap.appendChild(img);
+		a.appendChild(wrap);
 		li.className = 'die';
 		li.appendChild(a);
 
@@ -603,7 +609,7 @@
 		e.preventDefault();
 		e.stopPropagation();
 
-		if (/^a$/i.test(e.target.nodeName)) {
+		if (/^div$/i.test(e.target.nodeName) && e.target.classList.contains('object-wrapper')) {
 			addDieHTML(e.target.getAttribute('data-side'), e.target.getAttribute('data-colour'));
 		}
 	};
@@ -613,7 +619,7 @@
 			e.preventDefault();
 			e.stopPropagation();
 
-			if (/^a$/i.test(e.target.nodeName)) {
+			if (/^div$/i.test(e.target.nodeName) && e.target.classList.contains('object-wrapper')) {
 				var imgEl = e.target,
 					aEl = e.target,//imgEl.parentNode,
 					liEl = aEl.parentNode,
@@ -651,9 +657,9 @@
 						icon = 'games/' + items[i].key + '/icon.svg#on';
 
 					html	+=	'<li class="tab' + active + '" style="width: ' + width + '%;">'
-							+		'<a href="#" data-game="' + items[i].key + '">'
-							+			'<object type="image/svg+xml" class="on" data="' + icon + '"></object>'
-							+			'<object type="image/svg+xml" class="off" data="' + icoff + '"></object>'
+							+		'<a class="svg" href="#" data-game="' + items[i].key + '">'
+							+			'<div class="object-wrapper on"><object type="image/svg+xml" width="100%" height="100%" data="' + icon + '"></object></div>'
+							+			'<div class="object-wrapper off"><object type="image/svg+xml" width="100%" height="100%" data="' + icoff + '"></object></div>'
 							+		'</a>'
 							+	'</li>'
 					;
@@ -732,7 +738,7 @@
 			e.preventDefault();
 			e.stopPropagation();
 
-			if (/^object$/i.test(e.target.nodeName)) {
+			if (/^div$/i.test(e.target.nodeName) && e.target.classList.contains('object-wrapper')) {
 				node = findAncestorNodeOfType(e.target, 'a');
 			} else if (/^a$/i.test(e.target.nodeName)) {
 				node = e.target;

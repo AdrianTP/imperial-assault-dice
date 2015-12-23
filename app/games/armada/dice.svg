@@ -209,140 +209,140 @@
 	<!-- Red Dice -->
 	<g id="red" class="sprite">
 		<title>red</title>
-		<use xlink:href="#red-bak"></use>
-		<use xlink:href="#hit" x="300" y="316" width="300" height="300" class="icon"></use>
-		<use xlink:href="#hit" x="450" y="566" width="300" height="300" class="icon"></use>
+		<use xlink:href="#red-bak" />
+		<use xlink:href="#hit" x="300" y="316" width="300" height="300" class="icon" />
+		<use xlink:href="#hit" x="450" y="566" width="300" height="300" class="icon" />
 	</g>
 	<g id="red-0" class="sprite">
 		<title>red 0</title>
-		<use xlink:href="#red-bak"></use>
-		<use xlink:href="#hit" x="300" y="466" class="icon"></use>
+		<use xlink:href="#red-bak" />
+		<use xlink:href="#hit" x="300" y="466" width="400" height="400" class="icon" />
 	</g>
 	<g id="red-1" class="sprite">
 		<title>red 1</title>
-		<use xlink:href="#red-bak"></use>
-		<use xlink:href="#hit" x="300" y="466" class="icon"></use>
+		<use xlink:href="#red-bak" />
+		<use xlink:href="#hit" x="300" y="466" width="400" height="400" class="icon" />
 	</g>
 	<g id="red-2" class="sprite">
 		<title>red 2</title>
-		<use xlink:href="#red-bak"></use>
-		<use xlink:href="#hit" x="300" y="316" width="300" height="300" class="icon"></use>
-		<use xlink:href="#hit" x="450" y="566" width="300" height="300" class="icon"></use>
+		<use xlink:href="#red-bak" />
+		<use xlink:href="#hit" x="300" y="316" width="300" height="300" class="icon" />
+		<use xlink:href="#hit" x="450" y="566" width="300" height="300" class="icon" />
 	</g>
 	<g id="red-3" class="sprite">
 		<title>red 3</title>
-		<use xlink:href="#red-bak"></use>
-		<use xlink:href="#critical" x="250" y="416" class="icon"></use>
+		<use xlink:href="#red-bak" />
+		<use xlink:href="#critical" x="250" y="416" width="500" height="500" class="icon" />
 	</g>
 	<g id="red-4" class="sprite">
 		<title>red 4</title>
-		<use xlink:href="#red-bak"></use>
-		<use xlink:href="#critical" x="250" y="416" class="icon"></use>
+		<use xlink:href="#red-bak" />
+		<use xlink:href="#critical" x="250" y="416" width="500" height="500" class="icon" />
 	</g>
 	<g id="red-5" class="sprite">
 		<title>red 5</title>
-		<use xlink:href="#red-bak"></use>
-		<use xlink:href="#accuracy" x="250" y="383" class="icon"></use>
+		<use xlink:href="#red-bak" />
+		<use xlink:href="#accuracy" x="250" y="383" width="500" height="500" class="icon" />
 	</g>
 	<g id="red-6" class="sprite">
 		<title>red 6</title>
-		<use xlink:href="#red-bak"></use>
+		<use xlink:href="#red-bak" />
 	</g>
 	<g id="red-7" class="sprite">
 		<title>red 7</title>
-		<use xlink:href="#red-bak"></use>
+		<use xlink:href="#red-bak" />
 	</g>
 	<!-- Blue Dice -->
 	<g id="blue" class="sprite">
 		<title>blue</title>
-		<use xlink:href="#blue-bak"></use>
-		<use xlink:href="#hit" x="300" y="466" class="icon"></use>
+		<use xlink:href="#blue-bak" />
+		<use xlink:href="#hit" x="300" y="466" width="400" height="400" class="icon" />
 	</g>
 	<g id="blue-0" class="sprite">
 		<title>blue 0</title>
-		<use xlink:href="#blue-bak"></use>
-		<use xlink:href="#hit" x="300" y="466" class="icon"></use>
+		<use xlink:href="#blue-bak" />
+		<use xlink:href="#hit" x="300" y="466" width="400" height="400" class="icon" />
 	</g>
 	<g id="blue-1" class="sprite">
 		<title>blue 1</title>
-		<use xlink:href="#blue-bak"></use>
-		<use xlink:href="#hit" x="300" y="466" class="icon"></use>
+		<use xlink:href="#blue-bak" />
+		<use xlink:href="#hit" x="300" y="466" width="400" height="400" class="icon" />
 	</g>
 	<g id="blue-2" class="sprite">
 		<title>blue 2</title>
-		<use xlink:href="#blue-bak"></use>
-		<use xlink:href="#hit" x="300" y="466" class="icon"></use>
+		<use xlink:href="#blue-bak" />
+		<use xlink:href="#hit" x="300" y="466" width="400" height="400" class="icon" />
 	</g>
 	<g id="blue-3" class="sprite">
 		<title>blue 3</title>
-		<use xlink:href="#blue-bak"></use>
-		<use xlink:href="#hit" x="300" y="466" class="icon"></use>
+		<use xlink:href="#blue-bak" />
+		<use xlink:href="#hit" x="300" y="466" width="400" height="400" class="icon" />
 	</g>
 	<g id="blue-4" class="sprite">
 		<title>blue 4</title>
-		<use xlink:href="#blue-bak"></use>
-		<use xlink:href="#critical" x="250" y="416" class="icon"></use>
+		<use xlink:href="#blue-bak" />
+		<use xlink:href="#critical" x="250" y="416" width="500" height="500" class="icon" />
 	</g>
 	<g id="blue-5" class="sprite">
 		<title>blue 5</title>
-		<use xlink:href="#blue-bak"></use>
-		<use xlink:href="#critical" x="250" y="416" class="icon"></use>
+		<use xlink:href="#blue-bak" />
+		<use xlink:href="#critical" x="250" y="416" width="500" height="500" class="icon" />
 	</g>
 	<g id="blue-6" class="sprite">
 		<title>blue 6</title>
-		<use xlink:href="#blue-bak"></use>
-		<use xlink:href="#accuracy" x="250" y="383" class="icon"></use>
+		<use xlink:href="#blue-bak" />
+		<use xlink:href="#accuracy" x="250" y="383" width="500" height="500" class="icon" />
 	</g>
 	<g id="blue-7" class="sprite">
 		<title>blue 7</title>
-		<use xlink:href="#blue-bak"></use>
-		<use xlink:href="#accuracy" x="250" y="383" class="icon"></use>
+		<use xlink:href="#blue-bak" />
+		<use xlink:href="#accuracy" x="250" y="383" width="500" height="500" class="icon" />
 	</g>
 	<!-- Black Dice -->
 	<g id="black" class="sprite">
 		<title>black</title>
-		<use xlink:href="#black-bak"></use>
-		<use xlink:href="#hit" x="300" y="316" width="300" height="300" class="icon"></use>
-		<use xlink:href="#critical" x="450" y="566" width="300" height="300" class="icon"></use>
+		<use xlink:href="#black-bak" />
+		<use xlink:href="#hit" x="300" y="316" width="300" height="300" class="icon" />
+		<use xlink:href="#critical" x="450" y="566" width="300" height="300" class="icon" />
 	</g>
 	<g id="black-0" class="sprite">
 		<title>black 0</title>
-		<use xlink:href="#black-bak"></use>
-		<use xlink:href="#hit" x="300" y="466" class="icon"></use>
+		<use xlink:href="#black-bak" />
+		<use xlink:href="#hit" x="300" y="466" width="400" height="400" class="icon" />
 	</g>
 	<g id="black-1" class="sprite">
 		<title>black 1</title>
-		<use xlink:href="#black-bak"></use>
-		<use xlink:href="#hit" x="300" y="466" class="icon"></use>
+		<use xlink:href="#black-bak" />
+		<use xlink:href="#hit" x="300" y="466" width="400" height="400" class="icon" />
 	</g>
 	<g id="black-2" class="sprite">
 		<title>black 2</title>
-		<use xlink:href="#black-bak"></use>
-		<use xlink:href="#hit" x="300" y="466" class="icon"></use>
+		<use xlink:href="#black-bak" />
+		<use xlink:href="#hit" x="300" y="466" width="400" height="400" class="icon" />
 	</g>
 	<g id="black-3" class="sprite">
 		<title>black 3</title>
-		<use xlink:href="#black-bak"></use>
-		<use xlink:href="#hit" x="300" y="466" class="icon"></use>
+		<use xlink:href="#black-bak" />
+		<use xlink:href="#hit" x="300" y="466" width="400" height="400" class="icon" />
 	</g>
 	<g id="black-4" class="sprite">
 		<title>black 4</title>
-		<use xlink:href="#black-bak"></use>
-		<use xlink:href="#hit" x="300" y="316" width="300" height="300" class="icon"></use>
-		<use xlink:href="#critical" x="450" y="566" width="300" height="300" class="icon"></use>
+		<use xlink:href="#black-bak" />
+		<use xlink:href="#hit" x="300" y="316" width="300" height="300" class="icon" />
+		<use xlink:href="#critical" x="450" y="566" width="300" height="300" class="icon" />
 	</g>
 	<g id="black-5" class="sprite">
 		<title>black 5</title>
-		<use xlink:href="#black-bak"></use>
-		<use xlink:href="#hit" x="300" y="316" width="300" height="300" class="icon"></use>
-		<use xlink:href="#critical" x="450" y="566" width="300" height="300" class="icon"></use>
+		<use xlink:href="#black-bak" />
+		<use xlink:href="#hit" x="300" y="316" width="300" height="300" class="icon" />
+		<use xlink:href="#critical" x="450" y="566" width="300" height="300" class="icon" />
 	</g>
 	<g id="black-6" class="sprite">
 		<title>black 6</title>
-		<use xlink:href="#black-bak"></use>
+		<use xlink:href="#black-bak" />
 	</g>
 	<g id="black-7" class="sprite">
 		<title>black 7</title>
-		<use xlink:href="#black-bak"></use>
+		<use xlink:href="#black-bak" />
 	</g>
 </svg>

@@ -144,88 +144,88 @@
 	<!-- Red Dice -->
 	<g id="red" class="sprite">
 		<title>red</title>
-		<use xlink:href="#red-bak"></use>
-		<use xlink:href="#critical" x="250" y="394" class="icon"></use>
+		<use xlink:href="#red-bak" />
+		<use xlink:href="#critical" x="250" y="394" width="500" height="500" class="icon" />
 	</g>
 	<g id="red-0" class="sprite">
 		<title>red 0</title>
-		<use xlink:href="#red-bak"></use>
-		<use xlink:href="#focus" x="250" y="394" class="icon"></use>
+		<use xlink:href="#red-bak" />
+		<use xlink:href="#focus" x="250" y="394" width="500" height="500" class="icon" />
 	</g>
 	<g id="red-1" class="sprite">
 		<title>red 1</title>
-		<use xlink:href="#red-bak"></use>
-		<use xlink:href="#focus" x="250" y="394" class="icon"></use>
+		<use xlink:href="#red-bak" />
+		<use xlink:href="#focus" x="250" y="394" width="500" height="500" class="icon" />
 	</g>
 	<g id="red-2" class="sprite">
 		<title>red 2</title>
-		<use xlink:href="#red-bak"></use>
-		<use xlink:href="#hit" x="250" y="394" class="icon"></use>
+		<use xlink:href="#red-bak" />
+		<use xlink:href="#hit" x="250" y="394" width="500" height="500" class="icon" />
 	</g>
 	<g id="red-3" class="sprite">
 		<title>red 3</title>
-		<use xlink:href="#red-bak"></use>
-		<use xlink:href="#hit" x="250" y="394" class="icon"></use>
+		<use xlink:href="#red-bak" />
+		<use xlink:href="#hit" x="250" y="394" width="500" height="500" class="icon" />
 	</g>
 	<g id="red-4" class="sprite">
 		<title>red 4</title>
-		<use xlink:href="#red-bak"></use>
-		<use xlink:href="#hit" x="250" y="394" class="icon"></use>
+		<use xlink:href="#red-bak" />
+		<use xlink:href="#hit" x="250" y="394" width="500" height="500" class="icon" />
 	</g>
 	<g id="red-5" class="sprite">
 		<title>red 5</title>
-		<use xlink:href="#red-bak"></use>
-		<use xlink:href="#critical" x="250" y="394" class="icon"></use>
+		<use xlink:href="#red-bak" />
+		<use xlink:href="#critical" x="250" y="394" width="500" height="500" class="icon" />
 	</g>
 	<g id="red-6" class="sprite">
 		<title>red 6</title>
-		<use xlink:href="#red-bak"></use>
+		<use xlink:href="#red-bak" />
 	</g>
 	<g id="red-7" class="sprite">
 		<title>red 7</title>
-		<use xlink:href="#red-bak"></use>
+		<use xlink:href="#red-bak" />
 	</g>
 	<!-- Green Dice -->
 	<g id="green" class="sprite">
 		<title>green</title>
-		<use xlink:href="#green-bak"></use>
-		<use xlink:href="#evade" x="250" y="394" class="icon"></use>
+		<use xlink:href="#green-bak" />
+		<use xlink:href="#evade" x="250" y="394" width="500" height="500" class="icon" />
 	</g>
 	<g id="green-0" class="sprite">
 		<title>green 0</title>
-		<use xlink:href="#green-bak"></use>
-		<use xlink:href="#focus" x="250" y="394" class="icon"></use>
+		<use xlink:href="#green-bak" />
+		<use xlink:href="#focus" x="250" y="394" width="500" height="500" class="icon" />
 	</g>
 	<g id="green-1" class="sprite">
 		<title>green 1</title>
-		<use xlink:href="#green-bak"></use>
-		<use xlink:href="#focus" x="250" y="394" class="icon"></use>
+		<use xlink:href="#green-bak" />
+		<use xlink:href="#focus" x="250" y="394" width="500" height="500" class="icon" />
 	</g>
 	<g id="green-2" class="sprite">
 		<title>green 2</title>
-		<use xlink:href="#green-bak"></use>
-		<use xlink:href="#evade" x="250" y="394" class="icon"></use>
+		<use xlink:href="#green-bak" />
+		<use xlink:href="#evade" x="250" y="394" width="500" height="500" class="icon" />
 	</g>
 	<g id="green-3" class="sprite">
 		<title>green 3</title>
-		<use xlink:href="#green-bak"></use>
-		<use xlink:href="#evade" x="250" y="394" class="icon"></use>
+		<use xlink:href="#green-bak" />
+		<use xlink:href="#evade" x="250" y="394" width="500" height="500" class="icon" />
 	</g>
 	<g id="green-4" class="sprite">
 		<title>green 4</title>
-		<use xlink:href="#green-bak"></use>
-		<use xlink:href="#evade" x="250" y="394" class="icon"></use>
+		<use xlink:href="#green-bak" />
+		<use xlink:href="#evade" x="250" y="394" width="500" height="500" class="icon" />
 	</g>
 	<g id="green-5" class="sprite">
 		<title>green 5</title>
-		<use xlink:href="#green-bak"></use>
+		<use xlink:href="#green-bak" />
 	</g>
 	<g id="green-6" class="sprite">
 		<title>green 6</title>
-		<use xlink:href="#green-bak"></use>
+		<use xlink:href="#green-bak" />
 	</g>
 	<g id="green-7" class="sprite">
 		<title>green 7</title>
-		<use xlink:href="#green-bak"></use>
+		<use xlink:href="#green-bak" />
 	</g>
 </svg>

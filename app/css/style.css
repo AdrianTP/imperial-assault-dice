@@ -115,40 +115,35 @@ object {
 	pointer-events: none;
 }
 
-a.svg {
-	position: relative;
+.object-wrapper {
 	display: inline-block;
 }
-a.svg:after {
-	content: "";
-	position: absolute;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	left:0;
+
+a.svg {
+	display: block;
 }
 
-.enter, .exit {
+.svg.enter, .svg.exit {
 	display: block;
 	float: right;
 	vertical-align: middle;
 }
 
-.enter object, .exit object {
+.svg.enter .object-wrapper, .svg.exit .object-wrapper {
 	height: 1em;
 	width: 1em;
 	vertical-align: middle;
 }
 
-.exit {
+.svg.exit {
 	display: none;
 }
 
-.fullscreen .enter {
+.fullscreen .svg.enter {
 	display: none;
 }
 
-.fullscreen .exit {
+.fullscreen .svg.exit {
 	display: block;
 }
 
@@ -205,11 +200,11 @@ li.defence {
 
 }
 
-li a, li object {
+li a, li .object-wrapper {
 	display: block;
 }
 
-.die object {
+.die .object-wrapper {
 	height: 10em;
 	width: 10em;
 }
@@ -293,7 +288,7 @@ th, td {
 	width: 25%;
 }
 
-th object, td object {
+th .object-wrapper, td .object-wrapper {
 	vertical-align: middle;
 	width: 1.2em;
 }
@@ -331,23 +326,25 @@ th object, td object {
 	border: none;
 }
 
-.tab object {
-	display: inline;
+.tab .object-wrapper {
+	display: inline-block;
 	height: 10em;
+	margin: 0 auto;
+	width: 10em;
 }
 
 .tab.active {
 	background-color: #EEE;
 }
 
-.tab.active .off {
+.tab.active .svg .off {
 	display: none;
 }
 
-.tab .on {
+.tab .svg .on {
 	display: none;
 }
 
-.tab.active .on {
-	display: inline;
+.tab.active .svg .on {
+	display: inline-block;
 }

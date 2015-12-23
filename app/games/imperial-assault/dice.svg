@@ -84,7 +84,7 @@
 		.icon { fill: #FFFFFF; filter: url(#inset-shadow); }
 		.white-die .icon { fill: #000000; filter: url(#inset-highlight); }
 		.white-die .border { stroke: #000000; stroke-width: 1px; }
-		.black-die .border { stroke: #FFFFFF; stroke-width 1px; }
+		.black-die .border { stroke: #FFFFFF; stroke-width: 1px; }
 	]]></style>
 	</defs>
 	<!-- Effect Icons -->
@@ -201,35 +201,80 @@
 		" />
 	</symbol>
 	<!-- Range Icons -->
+	<symbol id="range-0" width="500" height="500" viewBox="0 0 1000 1000">
+		<title>range 0</title>
+		<path d="
+			M783.464,344.414v321.242c0,72.98-3.969,126.117-11.857,159.406c-7.938,33.34-24.409,64.5-49.414,93.422
+			c-24.956,28.977-55.12,49.762-90.396,62.465C596.473,993.648,557.03,1000,513.421,1000c-57.552,0-105.329-6.648-143.382-19.945
+			c-38.103-13.297-68.417-33.984-91.04-62.164c-22.574-28.133-38.648-57.801-48.174-88.957
+			c-9.526-31.105-14.289-80.57-14.289-148.391V344.414c0-88.41,7.641-154.645,22.921-198.699
+			c15.281-44.008,45.595-79.285,91.04-105.875C375.894,13.297,430.914,0,495.56,0c52.739,0,99.921,9.18,141.596,27.633
+			c41.625,18.457,72.732,40.98,93.372,67.523c20.639,26.594,34.58,56.512,41.923,89.852
+			C779.793,218.297,783.464,271.434,783.464,344.414z M543.139,263.496c0-51.152-2.48-83.152-7.441-96.051
+			c-4.962-12.902-16.571-19.352-34.779-19.352c-17.86,0-29.669,6.848-35.424,20.539c-5.755,13.695-8.583,45.297-8.583,94.863v469.98
+			c0,55.914,2.63,89.652,7.988,101.113c5.357,11.512,16.967,17.266,34.828,17.266c17.86,0,29.52-6.746,35.076-20.242
+			c5.557-13.445,8.335-43.809,8.335-90.992V263.496
+			z
+		"/>
+	</symbol>
 	<symbol id="range-1" width="500" height="500" viewBox="0 0 1000 1000">
 		<title>range 1</title>
-		<text font-family="Impact" font-size="1200" font-weight="bold">
-			<tspan x="500" y="500" text-anchor="middle" alignment-baseline="central">1</tspan>
-		</text>
+		<path d="
+			M710.934,0v1000H461.396V463.866c0-77.411-1.854-123.938-5.558-139.592c-3.708-15.645-13.898-27.487-30.575-35.516
+			c-16.677-8.031-53.843-12.044-111.488-12.044h-24.708V160.129C409.714,134.168,501.33,80.789,563.926,0H710.934
+			z
+		"/>
 	</symbol>
 	<symbol id="range-2" width="500" height="500" viewBox="0 0 1000 1000">
 		<title>range 2</title>
-		<text font-family="Impact" font-size="1200" font-weight="bold">
-			<tspan x="500" y="500" text-anchor="middle" alignment-baseline="central">2</tspan>
-		</text>
+		<path d="
+			M758.485,832.728V1000H219.697l0.151-140c159.593-261.004,254.441-422.519,284.545-484.545
+			c30.095-62.017,45.151-110.397,45.151-145.151c0-26.667-4.555-46.563-13.654-59.697c-9.11-13.125-22.964-19.697-41.572-19.697
+			c-18.618,0-32.472,7.272-41.572,21.818c-9.109,14.546-13.656,43.438-13.656,86.667v93.333H219.697V316.97
+			c0-54.943,2.822-98.276,8.484-130c5.653-31.714,19.593-62.926,41.818-93.636c22.216-30.701,51.108-53.939,86.667-69.697
+			C392.216,7.879,434.848,0,484.546,0c97.366,0,171.003,24.147,220.908,72.424c49.896,48.286,74.849,109.395,74.849,183.333
+			c0,56.165-14.043,115.559-42.131,178.182c-28.087,62.632-110.814,195.558-248.191,398.788H758.485
+			z
+		"/>
 	</symbol>
 	<symbol id="range-3" width="500" height="500" viewBox="0 0 1000 1000">
 		<title>range 3</title>
-		<text font-family="Impact" font-size="1200" font-weight="bold">
-			<tspan x="500" y="500" text-anchor="middle" alignment-baseline="central">3</tspan>
-		</text>
+		<path d="
+			M674.985,435.828c36.439,12.292,63.577,32.402,81.402,60.348s26.738,93.435,26.738,196.478
+			c0,76.49-8.719,135.844-26.146,178.05c-17.435,42.202-47.531,74.307-90.313,96.3C623.884,988.999,569.02,1000,502.079,1000
+			c-76.055,0-135.77-12.776-179.144-38.325c-43.376-25.55-71.897-56.835-85.562-93.878c-13.667-37.034-20.5-101.309-20.5-192.811
+			V598.93h240.047v156.27c0,41.593,2.47,68.034,7.427,79.323c4.948,11.29,15.941,16.933,32.977,16.933
+			c18.613,0,30.896-7.13,36.84-21.39c5.94-14.26,8.911-51.489,8.911-111.705v-66.548c0-36.839-4.156-63.773-12.476-80.808
+			c-8.319-17.026-20.603-28.226-36.84-33.571c-16.247-5.349-47.738-8.412-94.474-9.211V388.592c57.042,0,92.292-2.172,105.762-6.536
+			c13.464-4.355,23.174-13.86,29.117-28.52c5.94-14.65,8.911-37.628,8.911-68.926v-53.474c0-33.665-3.472-55.853-10.397-66.551
+			c-6.935-10.695-17.731-16.041-32.382-16.041c-16.637,0-28.028,5.644-34.166,16.933c-6.146,11.289-9.209,35.355-9.209,72.194v79.023
+			H216.874v-81.994c0-91.896,20.991-153.987,62.983-186.275C321.839,16.146,388.591,0,480.095,0
+			c114.471,0,192.112,22.366,232.916,67.096c40.797,44.729,61.202,106.879,61.202,186.441c0,53.839-7.334,92.729-21.984,116.682
+			C737.568,394.171,711.824,416.036,674.985,435.828
+			z
+		"/>
 	</symbol>
 	<symbol id="range-4" width="500" height="500" viewBox="0 0 1000 1000">
 		<title>range 4</title>
-		<text font-family="Impact" font-size="1200" font-weight="bold">
-			<tspan x="500" y="500" text-anchor="middle" alignment-baseline="central">4</tspan>
-		</text>
+		<path d="
+			M737.492,0v653.489h71.031v170.476h-71.031V1000H487.957V823.965h-296.48V653.489L407.044,0H737.492z M487.957,653.489
+			v-425.57l-110.254,425.57H487.957
+			z
+		"/>
 	</symbol>
 	<symbol id="range-5" width="500" height="500" viewBox="0 0 1000 1000">
 		<title>range 5</title>
-		<text font-family="Impact" font-size="1200" font-weight="bold">
-			<tspan x="500" y="500" text-anchor="middle" alignment-baseline="central">5</tspan>
-		</text>
+		<path d="
+			M745.158,0v156.966H441.515v166.671c37.976-44.85,86.872-67.272,146.671-67.272c67.467,0,118.484,18.892,153.031,56.668
+			c34.547,37.782,51.814,110.407,51.814,217.876v140c0,69.498-3.338,120.51-10,153.03c-6.664,32.53-20.902,62.636-42.727,90.303
+			c-21.812,27.679-52.225,48.894-91.215,63.639c-38.988,14.745-86.566,22.12-142.721,22.12c-63.032,0-118.595-11.015-166.668-33.032
+			c-48.09-22.012-82.228-54.845-102.428-98.481c-20.207-43.637-30.305-111.108-30.305-202.425v-53.336h244.854v61.212
+			c0,63.439,2.216,108.488,6.664,135.153c4.442,26.665,19.791,40.003,46.062,40.003c12.117,0,21.912-3.838,29.396-11.516
+			c7.473-7.672,11.516-15.958,12.119-24.848c0.604-8.885,1.311-47.476,2.119-115.762V502.426c0-36.762-3.84-61.821-11.516-75.153
+			c-7.678-13.333-20.4-20.002-38.178-20.002c-11.316,0-20.816,3.44-28.488,10.303c-7.677,6.88-12.632,14.244-14.847,22.126
+			c-2.227,7.876-3.332,26.164-3.332,54.845H209.395L219.697,0H745.158
+			z
+		"/>
 	</symbol>
 	<!-- Dice Backgrounds -->
 	<symbol id="red-bak" width="1000" height="1000" viewBox="0 0 1000 1000">
@@ -259,268 +304,268 @@
 	<!-- Red Dice -->
 	<g id="red" class="sprite">
 		<title>red</title>
-		<use xlink:href="#red-bak"></use>
-		<use xlink:href="#damage" x="75" y="75" class="icon"></use>
-		<use xlink:href="#damage" x="525" y="75" class="icon"></use>
-		<use xlink:href="#damage" x="300" y="525" class="icon"></use>
+		<use xlink:href="#red-bak" />
+		<use xlink:href="#damage" x="75" y="75" width="400" height="400" class="icon" />
+		<use xlink:href="#damage" x="525" y="75" width="400" height="400" class="icon" />
+		<use xlink:href="#damage" x="300" y="525" width="400" height="400" class="icon" />
 	</g>
 	<g id="red-0" class="sprite">
 		<title>red 0</title>
-		<use xlink:href="#red-bak"></use>
-		<use xlink:href="#damage" x="300" y="300" class="icon"></use>
+		<use xlink:href="#red-bak" />
+		<use xlink:href="#damage" x="300" y="300" width="400" height="400" class="icon" />
 	</g>
 	<g id="red-1" class="sprite">
 		<title>red 1</title>
-		<use xlink:href="#red-bak"></use>
-		<use xlink:href="#damage" x="75" y="75" class="icon"></use>
-		<use xlink:href="#damage" x="525" y="525" class="icon"></use>
+		<use xlink:href="#red-bak" />
+		<use xlink:href="#damage" x="75" y="75" width="400" height="400" class="icon" />
+		<use xlink:href="#damage" x="525" y="525" width="400" height="400" class="icon" />
 	</g>
 	<g id="red-2" class="sprite">
 		<title>red 2</title>
-		<use xlink:href="#red-bak"></use>
-		<use xlink:href="#damage" x="75" y="75" class="icon"></use>
-		<use xlink:href="#damage" x="525" y="525" class="icon"></use>
+		<use xlink:href="#red-bak" />
+		<use xlink:href="#damage" x="75" y="75" width="400" height="400" class="icon" />
+		<use xlink:href="#damage" x="525" y="525" width="400" height="400" class="icon" />
 	</g>
 	<g id="red-3" class="sprite">
 		<title>red 3</title>
-		<use xlink:href="#red-bak"></use>
-		<use xlink:href="#damage" x="75" y="75" class="icon"></use>
-		<use xlink:href="#damage" x="525" y="75" class="icon"></use>
-		<use xlink:href="#surge" x="250" y="500" class="icon"></use>
+		<use xlink:href="#red-bak" />
+		<use xlink:href="#damage" x="75" y="75" width="400" height="400" class="icon" />
+		<use xlink:href="#damage" x="525" y="75" width="400" height="400" class="icon" />
+		<use xlink:href="#surge" x="250" y="500" width="500" height="500" class="icon" />
 	</g>
 	<g id="red-4" class="sprite">
 		<title>red 4</title>
-		<use xlink:href="#red-bak"></use>
-		<use xlink:href="#damage" x="75" y="75" class="icon"></use>
-		<use xlink:href="#damage" x="525" y="75" class="icon"></use>
-		<use xlink:href="#damage" x="300" y="525" class="icon"></use>
+		<use xlink:href="#red-bak" />
+		<use xlink:href="#damage" x="75" y="75" width="400" height="400" class="icon" />
+		<use xlink:href="#damage" x="525" y="75" width="400" height="400" class="icon" />
+		<use xlink:href="#damage" x="300" y="525" width="400" height="400" class="icon" />
 	</g>
 	<g id="red-5" class="sprite">
 		<title>red 5</title>
-		<use xlink:href="#red-bak"></use>
-		<use xlink:href="#damage" x="75" y="75" class="icon"></use>
-		<use xlink:href="#damage" x="525" y="75" class="icon"></use>
-		<use xlink:href="#damage" x="300" y="525" class="icon"></use>
+		<use xlink:href="#red-bak" />
+		<use xlink:href="#damage" x="75" y="75" width="400" height="400" class="icon" />
+		<use xlink:href="#damage" x="525" y="75" width="400" height="400" class="icon" />
+		<use xlink:href="#damage" x="300" y="525" width="400" height="400" class="icon" />
 	</g>
 	<!-- Yellow Dice -->
 	<g id="yellow" class="sprite">
 		<title>yellow</title>
-		<use xlink:href="#yellow-bak"></use>
-		<use xlink:href="#damage" x="300" y="75" class="icon"></use>
-		<use xlink:href="#surge" x="50" y="500" class="icon"></use>
-		<use xlink:href="#surge" x="450" y="500" class="icon"></use>
+		<use xlink:href="#yellow-bak" />
+		<use xlink:href="#damage" x="300" y="75" width="400" height="400" class="icon" />
+		<use xlink:href="#surge" x="50" y="500" width="500" height="500" class="icon" />
+		<use xlink:href="#surge" x="450" y="500" width="500" height="500" class="icon" />
 	</g>
 	<g id="yellow-0" class="sprite">
 		<title>yellow 0</title>
-		<use xlink:href="#yellow-bak"></use>
-		<use xlink:href="#surge" x="250" y="250" class="icon"></use>
+		<use xlink:href="#yellow-bak" />
+		<use xlink:href="#surge" x="250" y="250" width="500" height="500" class="icon" />
 	</g>
 	<g id="yellow-1" class="sprite">
 		<title>yellow 1</title>
-		<use xlink:href="#yellow-bak"></use>
-		<use xlink:href="#damage" x="300" y="75" class="icon"></use>
-		<use xlink:href="#surge" x="50" y="500" class="icon"></use>
-		<use xlink:href="#surge" x="450" y="500" class="icon"></use>
+		<use xlink:href="#yellow-bak" />
+		<use xlink:href="#damage" x="300" y="75" width="400" height="400" class="icon" />
+		<use xlink:href="#surge" x="50" y="500" width="500" height="500" class="icon" />
+		<use xlink:href="#surge" x="450" y="500" width="500" height="500" class="icon" />
 	</g>
 	<g id="yellow-2" class="sprite">
 		<title>yellow 2</title>
-		<use xlink:href="#yellow-bak"></use>
-		<use xlink:href="#damage" x="75" y="75" class="icon"></use>
-		<use xlink:href="#surge" x="50" y="500" class="icon"></use>
-		<use xlink:href="#range-1" x="500" y="250" class="icon"></use>
+		<use xlink:href="#yellow-bak" />
+		<use xlink:href="#damage" x="75" y="75" width="400" height="400" class="icon" />
+		<use xlink:href="#surge" x="50" y="500" width="500" height="500" class="icon" />
+		<use xlink:href="#range-1" x="500" y="250" width="500" height="500" class="icon" />
 	</g>
 	<g id="yellow-3" class="sprite">
 		<title>yellow 3</title>
-		<use xlink:href="#yellow-bak"></use>
-		<use xlink:href="#damage" x="75" y="75" class="icon"></use>
-		<use xlink:href="#damage" x="75" y="525" class="icon"></use>
-		<use xlink:href="#range-1" x="500" y="250" class="icon"></use>
+		<use xlink:href="#yellow-bak" />
+		<use xlink:href="#damage" x="75" y="75" width="400" height="400" class="icon" />
+		<use xlink:href="#damage" x="75" y="525" width="400" height="400" class="icon" />
+		<use xlink:href="#range-1" x="500" y="250" width="500" height="500" class="icon" />
 	</g>
 	<g id="yellow-4" class="sprite">
 		<title>yellow 4</title>
-		<use xlink:href="#yellow-bak"></use>
-		<use xlink:href="#surge" x="50" y="250" class="icon"></use>
-		<use xlink:href="#range-2" x="500" y="250" class="icon"></use>
+		<use xlink:href="#yellow-bak" />
+		<use xlink:href="#surge" x="50" y="250" width="500" height="500" class="icon" />
+		<use xlink:href="#range-2" x="500" y="250" width="500" height="500" class="icon" />
 	</g>
 	<g id="yellow-5" class="sprite">
 		<title>yellow 5</title>
-		<use xlink:href="#yellow-bak"></use>
-		<use xlink:href="#damage" x="75" y="300" class="icon"></use>
-		<use xlink:href="#range-2" x="500" y="250" class="icon"></use>
+		<use xlink:href="#yellow-bak" />
+		<use xlink:href="#damage" x="75" y="300" width="400" height="400" class="icon" />
+		<use xlink:href="#range-2" x="500" y="250" width="500" height="500" class="icon" />
 	</g>
 	<!-- Green Dice -->
 	<g id="green" class="sprite">
 		<title>green</title>
-		<use xlink:href="#green-bak"></use>
-		<use xlink:href="#damage" x="75" y="75" class="icon"></use>
-		<use xlink:href="#surge" x="50" y="500" class="icon"></use>
-		<use xlink:href="#range-1" x="500" y="250" class="icon"></use>
+		<use xlink:href="#green-bak" />
+		<use xlink:href="#damage" x="75" y="75" width="400" height="400" class="icon" />
+		<use xlink:href="#surge" x="50" y="500" width="500" height="500" class="icon" />
+		<use xlink:href="#range-1" x="500" y="250" width="500" height="500" class="icon" />
 	</g>
 	<g id="green-0" class="sprite">
 		<title>green 0</title>
-		<use xlink:href="#green-bak"></use>
-		<use xlink:href="#surge" x="50" y="250" class="icon"></use>
-		<use xlink:href="#range-2" x="500" y="250" class="icon"></use>
+		<use xlink:href="#green-bak" />
+		<use xlink:href="#surge" x="50" y="250" width="500" height="500" class="icon" />
+		<use xlink:href="#range-2" x="500" y="250" width="500" height="500" class="icon" />
 	</g>
 	<g id="green-1" class="sprite">
 		<title>green 1</title>
-		<use xlink:href="#green-bak"></use>
-		<use xlink:href="#damage" x="75" y="75" class="icon"></use>
-		<use xlink:href="#surge" x="50" y="500" class="icon"></use>
-		<use xlink:href="#range-1" x="500" y="250" class="icon"></use>
+		<use xlink:href="#green-bak" />
+		<use xlink:href="#damage" x="75" y="75" width="400" height="400" class="icon" />
+		<use xlink:href="#surge" x="50" y="500" width="500" height="500" class="icon" />
+		<use xlink:href="#range-1" x="500" y="250" width="500" height="500" class="icon" />
 	</g>
 	<g id="green-2" class="sprite">
 		<title>green 2</title>
-		<use xlink:href="#green-bak"></use>
-		<use xlink:href="#damage" x="75" y="75" class="icon"></use>
-		<use xlink:href="#damage" x="75" y="525" class="icon"></use>
-		<use xlink:href="#range-1" x="500" y="250" class="icon"></use>
+		<use xlink:href="#green-bak" />
+		<use xlink:href="#damage" x="75" y="75" width="400" height="400" class="icon" />
+		<use xlink:href="#damage" x="75" y="525" width="400" height="400" class="icon" />
+		<use xlink:href="#range-1" x="500" y="250" width="500" height="500" class="icon" />
 	</g>
 	<g id="green-3" class="sprite">
 		<title>green 3</title>
-		<use xlink:href="#green-bak"></use>
-		<use xlink:href="#damage" x="75" y="75" class="icon"></use>
-		<use xlink:href="#surge" x="50" y="500" class="icon"></use>
-		<use xlink:href="#range-2" x="500" y="250" class="icon"></use>
+		<use xlink:href="#green-bak" />
+		<use xlink:href="#damage" x="75" y="75" width="400" height="400" class="icon" />
+		<use xlink:href="#surge" x="50" y="500" width="500" height="500" class="icon" />
+		<use xlink:href="#range-2" x="500" y="250" width="500" height="500" class="icon" />
 	</g>
 	<g id="green-4" class="sprite">
 		<title>green 4</title>
-		<use xlink:href="#green-bak"></use>
-		<use xlink:href="#damage" x="75" y="75" class="icon"></use>
-		<use xlink:href="#damage" x="75" y="525" class="icon"></use>
-		<use xlink:href="#range-2" x="500" y="250" class="icon"></use>
+		<use xlink:href="#green-bak" />
+		<use xlink:href="#damage" x="75" y="75" width="400" height="400" class="icon" />
+		<use xlink:href="#damage" x="75" y="525" width="400" height="400" class="icon" />
+		<use xlink:href="#range-2" x="500" y="250" width="500" height="500" class="icon" />
 	</g>
 	<g id="green-5" class="sprite">
 		<title>green 5</title>
-		<use xlink:href="#green-bak"></use>
-		<use xlink:href="#damage" x="75" y="75" class="icon"></use>
-		<use xlink:href="#damage" x="75" y="525" class="icon"></use>
-		<use xlink:href="#range-3" x="500" y="250" class="icon"></use>
+		<use xlink:href="#green-bak" />
+		<use xlink:href="#damage" x="75" y="75" width="400" height="400" class="icon" />
+		<use xlink:href="#damage" x="75" y="525" width="400" height="400" class="icon" />
+		<use xlink:href="#range-3" x="500" y="250" width="500" height="500" class="icon" />
 	</g>
 	<!-- Blue Dice -->
 	<g id="blue" class="sprite">
 		<title>blue</title>
-		<use xlink:href="#blue-bak"></use>
-		<use xlink:href="#damage" x="75" y="75" class="icon"></use>
-		<use xlink:href="#damage" x="75" y="525" class="icon"></use>
-		<use xlink:href="#range-3" x="500" y="250" class="icon"></use>
+		<use xlink:href="#blue-bak" />
+		<use xlink:href="#damage" x="75" y="75" width="400" height="400" class="icon" />
+		<use xlink:href="#damage" x="75" y="525" width="400" height="400" class="icon" />
+		<use xlink:href="#range-3" x="500" y="250" width="500" height="500" class="icon" />
 	</g>
 	<g id="blue-0" class="sprite">
 		<title>blue 0</title>
-		<use xlink:href="#blue-bak"></use>
-		<use xlink:href="#surge" x="50" y="250" class="icon"></use>
-		<use xlink:href="#range-2" x="500" y="250" class="icon"></use>
+		<use xlink:href="#blue-bak" />
+		<use xlink:href="#surge" x="50" y="250" width="500" height="500" class="icon" />
+		<use xlink:href="#range-2" x="500" y="250" width="500" height="500" class="icon" />
 	</g>
 	<g id="blue-1" class="sprite">
 		<title>blue 1</title>
-		<use xlink:href="#blue-bak"></use>
-		<use xlink:href="#damage" x="75" y="300" class="icon"></use>
-		<use xlink:href="#range-2" x="500" y="250" class="icon"></use>
+		<use xlink:href="#blue-bak" />
+		<use xlink:href="#damage" x="75" y="300" width="400" height="400" class="icon" />
+		<use xlink:href="#range-2" x="500" y="250" width="500" height="500" class="icon" />
 	</g>
 	<g id="blue-2" class="sprite">
 		<title>blue 2</title>
-		<use xlink:href="#blue-bak"></use>
-		<use xlink:href="#damage" x="75" y="75" class="icon"></use>
-		<use xlink:href="#surge" x="50" y="500" class="icon"></use>
-		<use xlink:href="#range-3" x="500" y="250" class="icon"></use>
+		<use xlink:href="#blue-bak" />
+		<use xlink:href="#damage" x="75" y="75" width="400" height="400" class="icon" />
+		<use xlink:href="#surge" x="50" y="500" width="500" height="500" class="icon" />
+		<use xlink:href="#range-3" x="500" y="250" width="500" height="500" class="icon" />
 	</g>
 	<g id="blue-3" class="sprite">
 		<title>blue 3</title>
-		<use xlink:href="#blue-bak"></use>
-		<use xlink:href="#damage" x="75" y="75" class="icon"></use>
-		<use xlink:href="#damage" x="75" y="525" class="icon"></use>
-		<use xlink:href="#range-3" x="500" y="250" class="icon"></use>
+		<use xlink:href="#blue-bak" />
+		<use xlink:href="#damage" x="75" y="75" width="400" height="400" class="icon" />
+		<use xlink:href="#damage" x="75" y="525" width="400" height="400" class="icon" />
+		<use xlink:href="#range-3" x="500" y="250" width="500" height="500" class="icon" />
 	</g>
 	<g id="blue-4" class="sprite">
 		<title>blue 4</title>
-		<use xlink:href="#blue-bak"></use>
-		<use xlink:href="#damage" x="75" y="75" class="icon"></use>
-		<use xlink:href="#damage" x="75" y="525" class="icon"></use>
-		<use xlink:href="#range-4" x="500" y="250" class="icon"></use>
+		<use xlink:href="#blue-bak" />
+		<use xlink:href="#damage" x="75" y="75" width="400" height="400" class="icon" />
+		<use xlink:href="#damage" x="75" y="525" width="400" height="400" class="icon" />
+		<use xlink:href="#range-4" x="500" y="250" width="500" height="500" class="icon" />
 	</g>
 	<g id="blue-5" class="sprite">
 		<title>blue 5</title>
-		<use xlink:href="#blue-bak"></use>
-		<use xlink:href="#damage" x="75" y="300" class="icon"></use>
-		<use xlink:href="#range-5" x="500" y="250" class="icon"></use>
+		<use xlink:href="#blue-bak" />
+		<use xlink:href="#damage" x="75" y="300" width="400" height="400" class="icon" />
+		<use xlink:href="#range-5" x="500" y="250" width="500" height="500" class="icon" />
 	</g>
 	<!-- Black Dice -->
 	<g id="black" class="sprite black-die">
 		<title>black</title>
-		<use xlink:href="#black-bak" class="border"></use>
-		<use xlink:href="#block" x="300" y="513" class="icon"></use>
-		<use xlink:href="#block" x="50" y="80" class="icon"></use>
-		<use xlink:href="#block" x="550" y="80" class="icon"></use>
+		<use xlink:href="#black-bak" class="border" />
+		<use xlink:href="#block" x="300" y="513" width="400" height="400" class="icon" />
+		<use xlink:href="#block" x="50" y="80" width="400" height="400" class="icon" />
+		<use xlink:href="#block" x="550" y="80" width="400" height="400" class="icon" />
 	</g>
 	<g id="black-0" class="sprite black-die">
 		<title>black 0</title>
-		<use xlink:href="#black-bak" class="border"></use>
-		<use xlink:href="#evade" x="300" y="300" class="icon"></use>
+		<use xlink:href="#black-bak" class="border" />
+		<use xlink:href="#evade" x="300" y="300" width="400" height="400" class="icon" />
 	</g>
 	<g id="black-1" class="sprite black-die">
 		<title>black 1</title>
-		<use xlink:href="#black-bak" class="border"></use>
-		<use xlink:href="#block" x="300" y="300" class="icon"></use>
+		<use xlink:href="#black-bak" class="border" />
+		<use xlink:href="#block" x="300" y="300" width="400" height="400" class="icon" />
 	</g>
 	<g id="black-2" class="sprite black-die">
 		<title>black 2</title>
-		<use xlink:href="#black-bak" class="border"></use>
-		<use xlink:href="#block" x="300" y="300" class="icon"></use>
+		<use xlink:href="#black-bak" class="border" />
+		<use xlink:href="#block" x="300" y="300" width="400" height="400" class="icon" />
 	</g>
 	<g id="black-3" class="sprite black-die">
 		<title>black 3</title>
-		<use xlink:href="#black-bak" class="border"></use>
-		<use xlink:href="#block" x="130" y="80" class="icon"></use>
-		<use xlink:href="#block" x="470" y="513" class="icon"></use>
+		<use xlink:href="#black-bak" class="border" />
+		<use xlink:href="#block" x="130" y="80" width="400" height="400" class="icon" />
+		<use xlink:href="#block" x="470" y="513" width="400" height="400" class="icon" />
 	</g>
 	<g id="black-4" class="sprite black-die">
 		<title>black 4</title>
-		<use xlink:href="#black-bak" class="border"></use>
-		<use xlink:href="#block" x="130" y="80" class="icon"></use>
-		<use xlink:href="#block" x="470" y="513" class="icon"></use>
+		<use xlink:href="#black-bak" class="border" />
+		<use xlink:href="#block" x="130" y="80" width="400" height="400" class="icon" />
+		<use xlink:href="#block" x="470" y="513" width="400" height="400" class="icon" />
 	</g>
 	<g id="black-5" class="sprite black-die">
 		<title>black 5</title>
-		<use xlink:href="#black-bak" class="border"></use>
-		<use xlink:href="#block" x="300" y="513" class="icon"></use>
-		<use xlink:href="#block" x="50" y="80" class="icon"></use>
-		<use xlink:href="#block" x="550" y="80" class="icon"></use>
+		<use xlink:href="#black-bak" class="border" />
+		<use xlink:href="#block" x="300" y="513" width="400" height="400" class="icon" />
+		<use xlink:href="#block" x="50" y="80" width="400" height="400" class="icon" />
+		<use xlink:href="#block" x="550" y="80" width="400" height="400" class="icon" />
 	</g>
 	<!-- White Dice -->
 	<g id="white" class="sprite white-die">
 		<title>white</title>
-		<use xlink:href="#white-bak" class="border"></use>
-		<use xlink:href="#dodge" x="300" y="300" class="icon"></use>
+		<use xlink:href="#white-bak" class="border" />
+		<use xlink:href="#dodge" x="300" y="300" width="400" height="400" class="icon" />
 	</g>
 	<g id="white-0" class="sprite white-die">
 		<title>white 0</title>
-		<use xlink:href="#white-bak" class="border"></use>
+		<use xlink:href="#white-bak" class="border" />
 	</g>
 	<g id="white-1" class="sprite white-die">
 		<title>white 1</title>
-		<use xlink:href="#white-bak" class="border"></use>
-		<use xlink:href="#evade" x="300" y="300" class="icon"></use>
+		<use xlink:href="#white-bak" class="border" />
+		<use xlink:href="#evade" x="300" y="300" width="400" height="400" class="icon" />
 	</g>
 	<g id="white-2" class="sprite white-die">
 		<title>white 2</title>
-		<use xlink:href="#white-bak" class="border"></use>
-		<use xlink:href="#block" x="300" y="300" class="icon"></use>
+		<use xlink:href="#white-bak" class="border" />
+		<use xlink:href="#block" x="300" y="300" width="400" height="400" class="icon" />
 	</g>
 	<g id="white-3" class="sprite white-die">
 		<title>white 3</title>
-		<use xlink:href="#white-bak" class="border"></use>
-		<use xlink:href="#block" x="100" y="100" class="icon"></use>
-		<use xlink:href="#evade" x="500" y="500" class="icon"></use>
+		<use xlink:href="#white-bak" class="border" />
+		<use xlink:href="#block" x="100" y="100" width="400" height="400" class="icon" />
+		<use xlink:href="#evade" x="500" y="500" width="400" height="400" class="icon" />
 	</g>
 	<g id="white-4" class="sprite white-die">
 		<title>white 4</title>
-		<use xlink:href="#white-bak" class="border"></use>
-		<use xlink:href="#block" x="100" y="100" class="icon"></use>
-		<use xlink:href="#evade" x="500" y="500" class="icon"></use>
+		<use xlink:href="#white-bak" class="border" />
+		<use xlink:href="#block" x="100" y="100" width="400" height="400" class="icon" />
+		<use xlink:href="#evade" x="500" y="500" width="400" height="400" class="icon" />
 	</g>
 	<g id="white-5" class="sprite white-die">
 		<title>white 5</title>
-		<use xlink:href="#white-bak" class="border"></use>
-		<use xlink:href="#dodge" x="300" y="300" class="icon"></use>
+		<use xlink:href="#white-bak" class="border" />
+		<use xlink:href="#dodge" x="300" y="300" width="400" height="400" class="icon" />
 	</g>
 </svg>

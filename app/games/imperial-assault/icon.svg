@@ -219,9 +219,9 @@
 	</symbol>
 	<!-- Styles -->
 	<g id="off" class="icon">
-		<use xlink:href="#icon" class="used"></use>
+		<use xlink:href="#icon" class="used" />
 	</g>
 	<g id="on" class="icon">
-		<use xlink:href="#icon" class="used"></use>
+		<use xlink:href="#icon" class="used" />
 	</g>
 </svg>

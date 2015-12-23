@@ -4,7 +4,7 @@
 		<style><![CDATA[
 		.icon { display: none; }
 		.icon:target { display: inline; }
-		.used { fill: #EEE; }
+		.used { fill: #FFF; }
 	]]></style>
 	</defs>
 	<!-- Effect Icons -->
@@ -119,37 +119,64 @@
 			Z
 		" />
 	</symbol>
-	<symbol id="rangeIcon" viewBox="0 0 1000 1000">
-		<title>range</title>
-		<text font-family="Impact" font-size="800" font-weight="bold">
-			<tspan x="280" y="500" text-anchor="middle" alignment-baseline="central">0</tspan>
-			<tspan x="760" y="500" text-anchor="middle" alignment-baseline="central">5</tspan>
-		</text>
+	<symbol id="range-0" viewBox="0 0 1000 1000">
+		<title>range 0</title>
+		<path d="
+			M783.464,344.414v321.242c0,72.98-3.969,126.117-11.857,159.406c-7.938,33.34-24.409,64.5-49.414,93.422
+			c-24.956,28.977-55.12,49.762-90.396,62.465C596.473,993.648,557.03,1000,513.421,1000c-57.552,0-105.329-6.648-143.382-19.945
+			c-38.103-13.297-68.417-33.984-91.04-62.164c-22.574-28.133-38.648-57.801-48.174-88.957
+			c-9.526-31.105-14.289-80.57-14.289-148.391V344.414c0-88.41,7.641-154.645,22.921-198.699
+			c15.281-44.008,45.595-79.285,91.04-105.875C375.894,13.297,430.914,0,495.56,0c52.739,0,99.921,9.18,141.596,27.633
+			c41.625,18.457,72.732,40.98,93.372,67.523c20.639,26.594,34.58,56.512,41.923,89.852
+			C779.793,218.297,783.464,271.434,783.464,344.414z M543.139,263.496c0-51.152-2.48-83.152-7.441-96.051
+			c-4.962-12.902-16.571-19.352-34.779-19.352c-17.86,0-29.669,6.848-35.424,20.539c-5.755,13.695-8.583,45.297-8.583,94.863v469.98
+			c0,55.914,2.63,89.652,7.988,101.113c5.357,11.512,16.967,17.266,34.828,17.266c17.86,0,29.52-6.746,35.076-20.242
+			c5.557-13.445,8.335-43.809,8.335-90.992V263.496
+			z
+		"/>
+	</symbol>
+	<symbol id="range-dash" viewBox="0 0 1000 1000">
 		<rect x="410" y="450" width="150" height="100" />
+	</symbol>
+	<symbol id="range-5" viewBox="0 0 1000 1000">
+		<title>range 5</title>
+		<path d="
+			M745.158,0v156.966H441.515v166.671c37.976-44.85,86.872-67.272,146.671-67.272c67.467,0,118.484,18.892,153.031,56.668
+			c34.547,37.782,51.814,110.407,51.814,217.876v140c0,69.498-3.338,120.51-10,153.03c-6.664,32.53-20.902,62.636-42.727,90.303
+			c-21.812,27.679-52.225,48.894-91.215,63.639c-38.988,14.745-86.566,22.12-142.721,22.12c-63.032,0-118.595-11.015-166.668-33.032
+			c-48.09-22.012-82.228-54.845-102.428-98.481c-20.207-43.637-30.305-111.108-30.305-202.425v-53.336h244.854v61.212
+			c0,63.439,2.216,108.488,6.664,135.153c4.442,26.665,19.791,40.003,46.062,40.003c12.117,0,21.912-3.838,29.396-11.516
+			c7.473-7.672,11.516-15.958,12.119-24.848c0.604-8.885,1.311-47.476,2.119-115.762V502.426c0-36.762-3.84-61.821-11.516-75.153
+			c-7.678-13.333-20.4-20.002-38.178-20.002c-11.316,0-20.816,3.44-28.488,10.303c-7.677,6.88-12.632,14.244-14.847,22.126
+			c-2.227,7.876-3.332,26.164-3.332,54.845H209.395L219.697,0H745.158
+			z
+		"/>
 	</symbol>
 	<!-- Effects -->
 	<g id="damage" class="icon">
 		<title>damage</title>
-		<use xlink:href="#damageIcon" class="used"></use>
+		<use xlink:href="#damageIcon" class="used" />
 	</g>
 	<g id="surge" class="icon">
 		<title>surge</title>
-		<use xlink:href="#surgeIcon" class="used"></use>
+		<use xlink:href="#surgeIcon" class="used" />
 	</g>
 	<g id="range" class="icon">
 		<title>range</title>
-		<use xlink:href="#rangeIcon" class="used"></use>
+		<use xlink:href="#range-0" x="-272" y="100" height="800" class="used" />
+		<use xlink:href="#range-dash" class="used" />
+		<use xlink:href="#range-5" x="264" y="100" height="800" class="used" />
 	</g>
 	<g id="block" class="icon">
 		<title>block</title>
-		<use xlink:href="#blockIcon" class="used"></use>
+		<use xlink:href="#blockIcon" class="used" />
 	</g>
 	<g id="evade" class="icon">
 		<title>evade</title>
-		<use xlink:href="#evadeIcon" class="used"></use>
+		<use xlink:href="#evadeIcon" class="used" />
 	</g>
 	<g id="dodge" class="icon">
 		<title>dodge</title>
-		<use xlink:href="#dodgeIcon" class="used"></use>
+		<use xlink:href="#dodgeIcon" class="used" />
 	</g>
 </svg>

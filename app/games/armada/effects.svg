@@ -116,14 +116,14 @@
 	<!-- Effects -->
 	<g id="hit" class="icon">
 		<title>hit</title>
-		<use xlink:href="#hitIcon" class="used"></use>
+		<use xlink:href="#hitIcon" class="used" />
 	</g>
 	<g id="critical" class="icon">
 		<title>critical</title>
-		<use xlink:href="#criticalIcon" class="used"></use>
+		<use xlink:href="#criticalIcon" class="used" />
 	</g>
 	<g id="accuracy" class="icon">
 		<title>accuracy</title>
-		<use xlink:href="#accuracyIcon" class="used"></use>
+		<use xlink:href="#accuracyIcon" class="used" />
 	</g>
 </svg>
