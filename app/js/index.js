@@ -302,13 +302,13 @@
 						colour = list[role][i].colour;
 
 					html	+=	'<li class="die">'
-							+		'<a href="#">'
-							+			'<img '
-							+				'alt="' + colour + '" '
-							+				'data-colour="' + colour + '" '
-							+				'data-uuid="' + uuid + '" '
-							+				'src="games/' + currentGame.key + '/dice.svg#' + colour + face + '" '
-							+			'/>'
+							+		'<a href="#" '
+							+			'data-colour="' + colour + '" '
+							+			'data-uuid="' + uuid + '" '
+							+		'>'
+							+			'<object type="image/svg+xml" '
+							+				'data="games/' + currentGame.key + '/dice.svg#' + colour + face + '" '
+							+			'></object>'
 							+		'</a>'
 							+	'</li>'
 					;
@@ -447,14 +447,11 @@
 		var html = '<table><thead>';
 
 		for (var i = 0; i < columns.length; ++ i) {
-			var title = columns[i].type === 'icon' ? '<img '
-										+				'alt="' + columns[i].title + '" '
-										+				'data-colour="' + columns[i].title + '" '
-										+				'data-side="attack" '
-										+				'src="games/' + currentGame.key + '/effects.svg#' + columns[i].title + '" '
-										+			'/>' : columns[i].title;
-
-			console.log(columns[i].type);
+			var title = columns[i].type === 'icon' ? '<object type="image/svg+xml" '
+//										+				'data-colour="' + columns[i].title + '" '
+//										+				'data-side="attack" '
+										+				'data="games/' + currentGame.key + '/effects.svg#' + columns[i].title + '" '
+										+			'></object>' : columns[i].title;
 
 			html += '<th>' + title + '</th>';
 		}
@@ -529,13 +526,13 @@
 			// Build Available Dice, Attack list
 			for (var colour in d.attack) {
 				html	+=	'<li class="die">'
-						+		'<a href="#">'
-						+			'<img '
-						+				'alt="' + colour + '" '
-						+				'data-colour="' + colour + '" '
-						+				'data-side="attack" '
-						+				'src="games/' + currentGame.key + '/dice.svg#' + colour + '" '
-						+			'/>'
+						+		'<a href="#" '
+						+			'data-colour="' + colour + '" '
+						+			'data-side="attack" '
+						+		'>'
+						+			'<object type="image/svg+xml" '
+						+				'data="games/' + currentGame.key + '/dice.svg#' + colour + '" '
+						+			'></object>'
 						+		'</a>'
 						+	'</li>'
 				;
@@ -550,13 +547,13 @@
 			// Build Available Dice, Defence list
 			for (var colour in d.defence) {
 				html	+=	'<li class="die">'
-						+		'<a href="#">'
-						+			'<img '
-						+				'alt="' + colour + '" '
-						+				'data-colour="' + colour + '" '
-						+				'data-side="defence" '
-						+				'src="games/' + currentGame.key + '/dice.svg#' + colour + '" '
-						+			'/>'
+						+		'<a href="#" '
+						+			'data-colour="' + colour + '" '
+						+			'data-side="defence" '
+						+		'>'
+						+			'<object type="image/svg+xml" '
+						+				'data="games/' + currentGame.key + '/dice.svg#' + colour + '" '
+						+			'></object>'
 						+		'</a>'
 						+	'</li>'
 				;
@@ -570,15 +567,15 @@
 
 	var buildDieHTML = function(colour, uuid, face) {
 		var li = document.createElement('li'),
-			img = document.createElement('img'),
+			img = document.createElement('object'),
 			a = document.createElement('a'),
 			faceString = typeof(face) === 'undefined' ? '' : '-' + face;
 
-		img.setAttribute('src', 'games/' + currentGame.key + '/dice.svg#' + colour + faceString);
-		img.setAttribute('alt', colour);
-		img.setAttribute('data-colour', colour);
-		img.setAttribute('data-uuid', uuid);
+		img.setAttribute('type', 'image/svg+xml');
+		img.setAttribute('data', 'games/' + currentGame.key + '/dice.svg#' + colour + faceString);
 		a.setAttribute('href', '#');
+		a.setAttribute('data-colour', colour);
+		a.setAttribute('data-uuid', uuid);
 		a.appendChild(img);
 		li.className = 'die';
 		li.appendChild(a);
@@ -606,7 +603,7 @@
 		e.preventDefault();
 		e.stopPropagation();
 
-		if (/^img$/i.test(e.target.nodeName)) {
+		if (/^a$/i.test(e.target.nodeName)) {
 			addDieHTML(e.target.getAttribute('data-side'), e.target.getAttribute('data-colour'));
 		}
 	};
@@ -616,9 +613,9 @@
 			e.preventDefault();
 			e.stopPropagation();
 
-			if (/^img$/i.test(e.target.nodeName)) {
+			if (/^a$/i.test(e.target.nodeName)) {
 				var imgEl = e.target,
-					aEl = imgEl.parentNode,
+					aEl = e.target,//imgEl.parentNode,
 					liEl = aEl.parentNode,
 					ulEl = liEl.parentNode,
 					colour = e.target.getAttribute('data-colour'),
@@ -655,8 +652,8 @@
 
 					html	+=	'<li class="tab' + active + '" style="width: ' + width + '%;">'
 							+		'<a href="#" data-game="' + items[i].key + '">'
-							+			'<img class="on" src="' + icon + '" />'
-							+			'<img class="off" src="' + icoff + '" />'
+							+			'<object type="image/svg+xml" class="on" data="' + icon + '"></object>'
+							+			'<object type="image/svg+xml" class="off" data="' + icoff + '"></object>'
 							+		'</a>'
 							+	'</li>'
 					;
@@ -735,7 +732,7 @@
 			e.preventDefault();
 			e.stopPropagation();
 
-			if (/^img$/i.test(e.target.nodeName)) {
+			if (/^object$/i.test(e.target.nodeName)) {
 				node = findAncestorNodeOfType(e.target, 'a');
 			} else if (/^a$/i.test(e.target.nodeName)) {
 				node = e.target;
@@ -792,7 +789,7 @@
 	if (window.applicationCache) {
 
 		console.log(cacheStatus());
-		
+
 		window.applicationCache.addEventListener('updateready', function(e) {
 			if (window.applicationCache.status == window.applicationCache.UPDATEREADY) {
 				// Browser downloaded a new app cache.

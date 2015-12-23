@@ -64,7 +64,7 @@ a:visited {
 	top: 100px;
 	width: 100%;
 	bottom: 0;
-	left: 0%;
+	left: 0;
 	transition: left 0.25s;
 	z-index: 999;
 	border-top: 1px solid #EEE;
@@ -111,13 +111,30 @@ h1 {
 	width: 100%;
 }
 
+object {
+	pointer-events: none;
+}
+
+a.svg {
+	position: relative;
+	display: inline-block;
+}
+a.svg:after {
+	content: "";
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left:0;
+}
+
 .enter, .exit {
 	display: block;
 	float: right;
 	vertical-align: middle;
 }
 
-.enter img, .exit img {
+.enter object, .exit object {
 	height: 1em;
 	width: 1em;
 	vertical-align: middle;
@@ -188,11 +205,11 @@ li.defence {
 
 }
 
-li a, li img {
+li a, li object {
 	display: block;
 }
 
-.die img {
+.die object {
 	height: 10em;
 	width: 10em;
 }
@@ -276,7 +293,7 @@ th, td {
 	width: 25%;
 }
 
-th img, td img {
+th object, td object {
 	vertical-align: middle;
 	width: 1.2em;
 }
@@ -314,7 +331,7 @@ th img, td img {
 	border: none;
 }
 
-.tab img {
+.tab object {
 	display: inline;
 	height: 10em;
 }
