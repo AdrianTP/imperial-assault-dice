@@ -242,7 +242,9 @@
 
 		// TODO: See about optimising this so sorting is included in the above loops
 		for (var effect in sorted) {
-			sorted[effect].sort();
+			sorted[effect].sort(function(a, b) {
+  				return a - b;
+			});
 		}
 
 		return sorted;
